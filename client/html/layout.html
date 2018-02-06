@@ -10,9 +10,11 @@
 
 <body>
   {{> sidebar}}
-  
-  <div class="main-content">
-      {{> posts}}
-  </div>
-
+        <!--this is where 'main_layout' is rendered by iron-router-->
 </body>
+
+<template name="main_layout">
+     <div class="main-content">
+        {{>yield}}
+    </div>
+</template>
