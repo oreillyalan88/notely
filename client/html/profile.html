@@ -1,1 +1,71 @@
-<template name="profile"></template>
+<template name="profile">
+    {{#if currentUser}}
+    <!-- this is where the user profile starts -->
+    <div id="profile-wrap">
+        <center>
+            <img src="github.svg" class="profile-img">
+            <h1 class="username">User 1</h1>
+            <h3 class ="">Email@email.com</h3>
+                <div class="" id="">
+                    <img src="up.png" class="rank" id="upvote">
+                    <img src="down.png" class="rank" id="downvote">
+                </div>
+                <div class="score" id="">
+                    <h3 class="count red block">12</h3>
+                    <h3 class="count yellow block">2</h3>
+                </div>
+        </center>
+    </div>
+
+    <!-- end profile -->
+    
+    <!-- posts -->
+        <div class="post">
+        <div class="row">
+            <div class =".col-sm-6 .col-md-5 .col-lg-6" id="info">
+                <h1 class="post-title">Post 1</h1>
+                <p class="meta">Author: User 1</p>
+                <p class="meta">Posted On: 10/10/10</p>
+            </div>
+            <div class =".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-offset-0" id="vote">
+                <img src="up.png" class="rank" id="upvote">
+                <img src="down.png" class="rank" id="downvote">
+            </div>
+            <div class="row" id="score">
+                <h3 class="count white block">12</h3>
+                <h3 class="count white block">12</h3>
+            </div>
+        </div>
+        
+        <p class="regular post-content">"There are many variations of passages of Lorem Ipsum available, 
+        but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. 
+        All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. 
+        The generated Lorem Ipsum is therefore always free from repetition, 
+        injected humour, or non-characteristic words etc"</p>
+    </div>
+    
+        <div class="post">
+        <div class="row">
+            <div class =".col-sm-6 .col-md-5 .col-lg-6" id="info">
+                <h1 class="post-title">Post 1</h1>
+                <p class="meta">Author: User 1</p>
+                <p class="meta">Posted On: 10/10/10</p>
+            </div>
+            <div class =".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-offset-0" id="vote">
+                <img src="up.png" class="rank" id="upvote">
+                <img src="down.png" class="rank" id="downvote">
+            </div>
+            <div class="row" id="score">
+                <h3 class="count white block">12</h3>
+                <h3 class="count white block">12</h3>
+            </div>
+        </div>
+        
+        <p class="regular post-content">"There are many variations of passages of Lorem Ipsum available, 
+        but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. 
+        All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. 
+        The generated Lorem Ipsum is therefore always free from repetition, 
+        injected humour, or non-characteristic words etc"</p>
+    </div>
+    {{/if}}
+</template>
