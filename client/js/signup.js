@@ -4,7 +4,7 @@ Template.signup.rendered = function(){
 
 Template.signup.events({
    "submit.form-signup": function(event){
-       var username = trimInput(event.target.username.value);
+       var username = validation.trimInput(event.target.username.value);
        var email = trimInput(event.target.email.value);
        var password = trimInput(event.target.password.value);
        var password2 = trimInput(event.target.password2.value);
