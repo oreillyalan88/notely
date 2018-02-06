@@ -51,7 +51,7 @@
     line-height: 1.8;
 }
 
-.smiley {
+.rank {
 	width: 50px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -61,7 +61,7 @@
             transition: all 0.5s;
 }
 
-.smiley:hover {
+.rank:hover {
 	width: 50px;
 	padding-left: 0px;
 	padding-right: 0px;
