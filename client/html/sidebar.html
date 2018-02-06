@@ -3,11 +3,18 @@
         <img src="logo.png" class="icon">
         <a class ="company-logo" href="#">Note.ly</a>
             <div class="sidebar-links">
-                <a class="link-red" href="#" id="profile-link"><i class="fa fa-user"></i>Profile</a>
+                {{#if currentUser}}
+                <a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i>Profile</a>
+                {{else}}
+                {{/if}}
                 <a class="link-blue" href="#" id="posts-link"><i class="fa fa-comments-o"></i>Profile</a>
                 <a class="link-yellow" href="#" id="rankings-link"><i class="fa fa-trophy"></i>Profile</a>
                 <a class="link-green" href="#" id="search-link"><i class="fa fa-search"></i>Profile</a>
-
+                {{#if currentUser}}
+                <a class="link-purple logout" href="#" id="logout-link"><i class="fa fa-sign-out"></i>Log Out</a>
+                {{else}}
+                <a class="" href="/" id="login-link"><i class="fa fa-sign-in"></i>Login</a>
+                {{/if}}
             </div>
     </aside>
 </template>
