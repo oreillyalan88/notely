@@ -6,6 +6,31 @@ Template.profile.rendered = function() {
     $("#search-link").removeClass('selected')
     $("#login-link").removeClass('selected')
     
-    
-    
 }
+
+Template.profile.helpers({
+    
+    email: function(){
+      if(!Meteor.user()){
+          Bert.alert("Your Are Not Logged In, Permission Denied", "daner", "growl-top-right")
+          return false;
+          
+      }  else {
+          return Meteor.user().emails[0].address;
+      }
+    },
+    
+    username: function(){
+        if(!Meteor.user()){
+          Bert.alert("Your Are Not Logged In, Permission Denied", "daner", "growl-top-right")
+          return false;
+          
+      }  else {
+          return Meteor.user().username;
+      }
+    }
+    
+    
+    
+    
+});
