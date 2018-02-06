@@ -9,3 +9,17 @@ Template.posts.rendered = function() {
     
     
 }
+
+Template.posts.events({
+    
+    "click #upvote": function(){
+        Bert.alert("You clicked up!", "success", "growl-top-right")
+        
+    },
+    
+    "click #downvote": function(){
+        Bert.alert("You clicked down!", "success", "growl-top-right")
+    }
+    
+    
+})

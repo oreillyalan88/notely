@@ -1,0 +1,34 @@
+<template name="postForm">
+    
+    {{#if currentUser}}
+    <!-- Post Form -->
+    <div id="postForm-wrap">
+        <center>
+            <form class="form-post">
+                <h2 class ="postForm-heading">Make a post</h2>
+                
+                <label for="postSubject" class="sr-only">Post Subect</label>
+                <input type="text" name="postSubject" id="postSubject" class="form-control" placeholder="Post Subject"/>
+                
+                <label for="postInput" class="sr-only">Message Body</label>
+                <input type="text" name="postInput" id="postInput" class="form-control" placeholder="What's on your mind?"/>
+            
+                <button class="btn btn-lg btn-success btn-block" type="submit">Post Message</button>
+            </form>
+        </center>
+    </div>
+    <!-- End Post Form-->
+    {{else}}
+    <!-- Post Form -->
+        <div id="postForm-wrap">
+        <center>
+            <form class="form-post">
+                <h2 class ="form-signin-heading">Login To Post</h2>
+                <a href="/" class="btn btn-md btn-primary" id="login-redir">Login</a>
+            </form>
+        </center>
+    </div>
+    <!-- End Post Form-->
+    {{/if}}
+    
+</template>
