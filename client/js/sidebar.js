@@ -3,7 +3,7 @@ Template.sidebar.rendered = function(){
 }
 
 Template.sidebar.events({
-    "click.logout": function(event){
+    "click .logout": function(event){
         
         Meteor.logout(function(err){
             if(err){

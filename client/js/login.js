@@ -1,3 +1,9 @@
+Tracker.autorun(function(){
+    if(Meteor.userId()){
+        Router.go("/posts");
+    }
+})
+
 Template.login.rendered = function(){
     
 }
