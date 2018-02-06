@@ -1,0 +1,15 @@
+<template name ="login">
+    <h3 class ="black">You are logged in. Return <a href="/posts">Home</a></h3>
+    
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Account Login</h2>
+        <labed for="email" class="sr-only">Email Address</labed>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Email Address">      
+        
+        <labed for="password" class="sr-only">Password</labed>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password">      
+
+        <button type="submit" id="login-btn" class="btn btn-lg btn-primary btn-block">Log In</button>
+        <p>No Account? <a href="/signup">Register Account</a></p>
+    </form>
+</template>
