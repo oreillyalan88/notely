@@ -8,10 +8,12 @@
                 <h2 class ="postForm-heading">Make a post</h2>
                 
                 <label for="postSubject" class="sr-only">Post Subect</label>
-                <input type="text" name="postSubject" id="postSubject" class="form-control" placeholder="Post Subject"/>
+                <input type="text" name="postSubject" id="postSubject" class="form-control" maxlength="40"
+                placeholder="Post Subject"/>
                 
                 <label for="postInput" class="sr-only">Message Body</label>
-                <input type="text" name="postInput" id="postInput" class="form-control" placeholder="What's on your mind?"/>
+                <input type="text" name="postInput" id="postInput" class="form-control" maxlength="6000"
+                placeholder="What's on your mind?"/>
             
                 <button class="btn btn-lg btn-success btn-block" type="submit">Post Message</button>
             </form>
