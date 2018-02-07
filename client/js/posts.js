@@ -6,9 +6,21 @@ Template.posts.rendered = function() {
     $("#search-link").removeClass('selected')
     $("#login-link").removeClass('selected')
     
-    
-    
 }
+
+Template.posts.helpers({
+    posts: function() {
+        var posts = Posts.find({},
+        {
+            sort: {createdAt:-1}
+            
+        }
+        );
+        return posts
+    }
+    
+    
+})
 
 Template.posts.events({
     

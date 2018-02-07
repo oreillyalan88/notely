@@ -4,7 +4,7 @@ Template.signup.rendered = function(){
 
 Template.signup.events({
    "submit.form-signup": function(event){
-       var username = validation.trimInput(event.target.username.value);
+       var username = trimInput(event.target.username.value);
        var email = trimInput(event.target.email.value);
        var password = trimInput(event.target.password.value);
        var password2 = trimInput(event.target.password2.value);
@@ -67,7 +67,7 @@ var isEmail = function(val){
 }
 
 //check password field
- isValidPassword = function(password){
+var isValidPassword = function(password){
     if(password.length<6){
         Bert.alert("Password must be at least 6 characthers", "danger",  "growl-top-right")
         return false;
@@ -77,7 +77,7 @@ var isEmail = function(val){
 
 //check password match
 
- areValidPasswords = function(password, confirm){
+var areValidPasswords = function(password, confirm){
     if(!isValidPassword(password)){
         return false
     }
