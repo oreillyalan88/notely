@@ -20,6 +20,9 @@ Template.signup.events({
           email: email,
           password: password,
           profile:{
+              upScore:0,
+              downScore:0,
+              voted:[]
               
           }
       }, function(err){

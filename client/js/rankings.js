@@ -9,3 +9,12 @@ Template.rankings.rendered = function() {
     
     
 }
+
+
+Template.rankings.helpers({
+    scoreLeader: function(){
+        var scoreLeader = Meteor.users.findOne({},{sort: {'profile.upScore': -1}}); //user with must upvotes
+        return scoreLeader;
+    }
+})
+    
