@@ -12,7 +12,7 @@ Template.profile.helpers({
     
     email: function(){
       if(!Meteor.user()){
-          Bert.alert("Your Are Not Logged In, Permission Denied", "daner", "growl-top-right")
+          Bert.alert("Your Are Not Logged In, Permission Denied", "danger", "growl-top-right")
           return false;
           
       }  else {
@@ -22,7 +22,7 @@ Template.profile.helpers({
     
     username: function(){
         if(!Meteor.user()){
-          Bert.alert("Your Are Not Logged In, Permission Denied", "daner", "growl-top-right")
+          Bert.alert("Your Are Not Logged In, Permission Denied", "danger", "growl-top-right")
           return false;
           
       }  else {
@@ -41,3 +41,11 @@ Template.profile.helpers({
     
     
 });
+
+Template.profile.events({
+    "click #delete-post": function(){
+        Meteor.call("removePost", this._id)
+        Bert.alert("Post Deleted", "success", "growl-top-right")
+
+    }
+})
