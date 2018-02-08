@@ -28,7 +28,14 @@ Template.profile.helpers({
       }  else {
           return Meteor.user().username;
       }
-    }
+    },
+    
+    userPosts: function(){
+        var username = Meteor.user().username;
+        var userId = Meteor.userId();
+        var userPosts = Posts.find({userId: userId}, {},{sort: {createdAt: -1}});
+        return userPosts;
+    },
     
     
     
