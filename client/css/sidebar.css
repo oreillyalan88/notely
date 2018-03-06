@@ -17,6 +17,20 @@
   margin: 0 auto;
   padding: 0;
   width: 80px;
+  
+}
+
+.profileImage-icon {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-position: top center;
+
+
 }
 
 .sidebar-left a.company-logo {
@@ -38,9 +52,9 @@
   display: block;
   text-decoration: none;
   margin: 0 auto 5px auto;
-  padding: 20px 0;
+  padding: 5px 0;
   background-color: rgba(255, 255, 255, 0.1);
-  text-align: center;
+  text-align: left;
   color:  #b3bcc5;
   font-size: 12px;
   font-weight: bold;
@@ -49,9 +63,10 @@
 }
 
 .sidebar-left .sidebar-links a i.fa {
-  display: block;
-  font-size: 35px;
-  margin-bottom: 5px;
+  display: inline;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .sidebar-left .sidebar-links a:hover{
@@ -87,6 +102,7 @@
   border-color: #ec4a4d;
 }
 .sidebar-left .sidebar-links a.link-red i.fa {
+  margin-right: 13px;
   color: #ec4a4d;
 }
 
