@@ -3,13 +3,13 @@
 
        
         <img src="logo.png" class="icon">
-        <a class ="company-logo" href="#">Note.ly</a>
+        <!--<a class ="company-logo" href="#">Note.ly</a>-->
             <div class="sidebar-links">
                 {{#if currentUser}}
                 {{#with userImages}}
                 <img src="{{image}}" class="profileImage-icon">
                 {{else}}
-                <img src="github.svg" class="icon">
+                <img src="github.svg" class="profileImage-icon">
                 {{/with}}
                 <a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i>Profile</a>
                 <a class="link-blue" href="/posts" id="posts-link"><i class="fa fa-comments-o"></i>Posts</a>

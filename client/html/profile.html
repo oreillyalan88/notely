@@ -37,9 +37,10 @@
         <div class="row">
             <div class =".col-sm-6 .col-md-5 .col-lg-6" id="info">
                 <h1 class="post-title">{{postSubject}}</h1>
-                <p class="meta">Author: {{author}}</p>
-                <p class="meta">Posted On: {{date}}</p>
+                <p class="meta">Posted By: {{author}} On: {{date}}</p>
             </div>
+                    
+            <p class="regular post-content">{{postInput}}</p>
             <div class =".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-offset-0" id="vote">
                 <img src="up.png" class="rank" id="upvote">
                 <img src="down.png" class="rank" id="downvote">
@@ -48,10 +49,9 @@
                 <h3 class="count white block">{{upScore}}</h3>
                 <h3 class="count white block">{{downScore}}</h3>
             </div>
+            <button class="btn btn-sml btn-danger" id="delete-post">Delete Post</button>
+
         </div>
-        
-        <p class="regular post-content">{{postInput}}</p>
-        <button class="btn btn-sml btn-danger" id="delete-post">Delete Post</button>
         
     </div>
     
