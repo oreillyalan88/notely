@@ -13,9 +13,12 @@ Template.signup.events({
        && isNotEmpty(username)
        && isNotEmpty(password)
        && isEmail(email) 
-       && areValidPasswords(password, password2)){
+       && areValidPasswords(password, password2))
+       
+       {
            
-    
+ 
+                        
       Accounts.createUser({
           username: username,
           email: email,
@@ -23,7 +26,9 @@ Template.signup.events({
           profile:{
               upScore:0,
               downScore:0,
-              voted:[]
+              voted:[],
+              
+
               
           }
       }, function(err){
@@ -31,6 +36,12 @@ Template.signup.events({
               Bert.alert(err.reason, "danger", "growl-top-right")
               
           } else {
+                UserImages.insert({
+                userId: Meteor.userId(),
+                username: username,
+                image: 'https://bootdey.com/img/Content/user_1.jpg',
+                        })
+                        ,
               Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
               Router.go("/posts")
           }

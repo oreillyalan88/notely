@@ -78,11 +78,14 @@ Template.profile.events({
                 }else{
                     var imageLocation = '/cfs/files/ProfileImages/'+result._id
                     
-                    UserImages.insert({
-                        userId: Meteor.userId(),
-                        username: Meteor.user().username,
-                        image: imageLocation,
-                    })
+                        UserImages.update(
+                          Meteor.userId(),
+                          {$set: {
+                            username: Meteor.user().username,
+                            image: imageLocation
+                            }
+                          }
+                        ) 
                     // document.location.reload(true);
                     Bert.alert("Profile Image Update Succesfull!", "success", "growl-top-right")
                 }
