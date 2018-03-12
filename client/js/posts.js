@@ -9,6 +9,7 @@ Template.posts.rendered = function() {
 }
 
 Template.posts.helpers({
+
     posts: function() {
         var posts = Posts.find({},
         {
@@ -16,10 +17,10 @@ Template.posts.helpers({
             
         }
         );
-        return posts
+        
+       return posts
+        
     }
-    
-    
 })
 
 Template.posts.events({

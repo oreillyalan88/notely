@@ -7,9 +7,28 @@
     <!-- Temperary Posts -->
     <div class="post">
         <div class="row">
+            <div class="border-end">
             <div class =".col-sm-6 .col-md-5 .col-lg-6" id="info">
-                <h1 class="post-title">{{postSubject}}</h1>
-                <p class="meta">Posted By: {{author}} On: {{date}}</p>
+            <!--{{#with userImages}}-->
+            <!--<img src="{{image}}" class="profile-img">-->
+            <!--{{else}}-->
+            <!--<img src="github.svg" class="profile-img">-->
+            <!--{{/with}}-->
+                <!--<h1 class="post-title">{{postSubject}}</h1>-->
+                <!--<p class="meta">Posted By: {{author}} On: {{date}}</p>-->
+                
+                    <div class="post-heading">
+                        <div class="pull-left image">
+                            <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                        </div>
+                        <div class="pull-left meta">
+                            <div class="title h5">
+                                <a href="#"><b>{{author}}</b></a>
+                                made a post.
+                            </div>
+                            <h6 class="text-muted time">{{date}}</h6>
+                        </div>
+                    </div> 
             </div>
                     
             <p class="regular post-content">{{postInput}}</p>
@@ -21,10 +40,55 @@
                 <h3 class="count white block">{{upScore}}</h3>
                 <h3 class="count white block">{{downScore}}</h3>
             </div>
-            
-        </div>
+            </div>
+            {{> commentForm}}
 
-    </div>
+        </div>
+             <div class="post-footer">
+
+                            <ul class="comments-list">
+                                <li class="comment">
+                                    <a class="pull-left" href="#">
+                                        <img class="avatar" src="https://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                                    </a>
+                                    <div class="comment-body">
+                                        <div class="comment-heading">
+                                            <h4 class="commenter">Gavino Free</h4>
+                                            <h5 class="time">5 minutes ago</h5>
+                                        </div>
+                                        <p>Sure, oooooooooooooooohhhhhhhhhhhhhhhh</p>
+                                    </div>
+                                    <ul class="comments-list">
+                                        <li class="comment">
+                                            <a class="pull-left" href="#">
+                                                <img class="avatar" src="https://bootdey.com/img/Content/user_3.jpg" alt="avatar">
+                                            </a>
+                                            <div class="comment-body">
+                                                <div class="comment-heading">
+                                                    <h4 class="commenter">Ryan Haywood</h4>
+                                                    <h5 class="time">3 minutes ago</h5>
+                                                </div>
+                                                <p>Relax my friend</p>
+                                            </div>
+                                        </li> 
+                                        <li class="comment">
+                                            <a class="pull-left" href="#">
+                                                <img class="avatar" src="https://bootdey.com/img/Content/user_2.jpg" alt="avatar">
+                                            </a>
+                                            <div class="comment-body">
+                                                <div class="comment-heading">
+                                                    <h4 class="commenter">Gavino Free</h4>
+                                                    <h5 class="time">3 minutes ago</h5>
+                                                </div>
+                                                <p>Ok, cool.</p>
+                                            </div>
+                                        </li> 
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+            
+                </div>
 
     {{else}}
     <h1>Nothing Posted Yet</h1>

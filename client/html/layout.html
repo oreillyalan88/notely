@@ -6,16 +6,19 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     	<link href='https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/locale/af.js" rel="stylesheet">
+        
 </head>
 
 <body>
   {{> bertAlert}}
   {{> sidebar}}
-        <!--this is where 'main_layout' is rendered by iron-router-->
 </body>
 
 <template name="main_layout">
      <div class="main-content">
+                 <!--this is where 'main_layout' is rendered by iron-router-->
+
         {{>yield}}
     </div>
 </template>

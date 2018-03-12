@@ -15,6 +15,7 @@ Template.signup.events({
        && isEmail(email) 
        && areValidPasswords(password, password2)){
            
+    
       Accounts.createUser({
           username: username,
           email: email,
