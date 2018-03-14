@@ -80,8 +80,8 @@ Template.profile.events({
                     var temp_id = Meteor.userId()
                     var tempImageId=UserImages.findOne({userId:temp_id},{userId: 0,username:0,image:0})
                     
-                    console.log(temp_id)
-                    console.log(imageLocation)
+                    // console.log(temp_id)
+                    // console.log(imageLocation)
                       UserImages.update(
                           {_id: tempImageId._id},
                           {$set: {

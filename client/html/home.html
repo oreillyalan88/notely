@@ -31,7 +31,7 @@
                                 <a href="#"><b>{{author}}</b></a>
                                 made a post.
                             </div>
-                            <h6 class="text-muted time" >{{livestamp date}}</h6>
+                            <h6 class="text-muted time" >{{livestamp createdAt}}</h6>
                         </div>
                     </div> 
             </div>
@@ -46,54 +46,10 @@
                 <h3 class="count white block">{{downScore}}</h3>
             </div>
             </div>
-            {{> commentForm}}
-
+                    {{> comments}}    
+                    {{> commentForm}}
         </div>
-             <div class="post-footer">
-
-                            <ul class="comments-list">
-                                <li class="comment">
-                                    <a class="pull-left" href="#">
-                                        <img class="avatar" src="https://bootdey.com/img/Content/user_1.jpg" alt="avatar">
-                                    </a>
-                                    <div class="comment-body">
-                                        <div class="comment-heading">
-                                            <h4 class="commenter">Gavino Free</h4>
-                                            <h5 class="time">5 minutes ago</h5>
-                                        </div>
-                                        <p>Sure, oooooooooooooooohhhhhhhhhhhhhhhh</p>
-                                    </div>
-                                    <ul class="comments-list">
-                                        <li class="comment">
-                                            <a class="pull-left" href="#">
-                                                <img class="avatar" src="https://bootdey.com/img/Content/user_3.jpg" alt="avatar">
-                                            </a>
-                                            <div class="comment-body">
-                                                <div class="comment-heading">
-                                                    <h4 class="commenter">Ryan Haywood</h4>
-                                                    <h5 class="time">3 minutes ago</h5>
-                                                </div>
-                                                <p>Relax my friend</p>
-                                            </div>
-                                        </li> 
-                                        <li class="comment">
-                                            <a class="pull-left" href="#">
-                                                <img class="avatar" src="https://bootdey.com/img/Content/user_2.jpg" alt="avatar">
-                                            </a>
-                                            <div class="comment-body">
-                                                <div class="comment-heading">
-                                                    <h4 class="commenter">Gavino Free</h4>
-                                                    <h5 class="time">3 minutes ago</h5>
-                                                </div>
-                                                <p>Ok, cool.</p>
-                                            </div>
-                                        </li> 
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-            
-                </div>
+                    </div>
     {{else}}
     <h1>Nothing Posted Yet</h1>
 
