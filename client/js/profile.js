@@ -77,15 +77,22 @@ Template.profile.events({
                     throw new Meteor.Error(err);
                 }else{
                     var imageLocation = '/cfs/files/ProfileImages/'+result._id
+                    var temp_id = Meteor.userId()
+                    var tempImageId=UserImages.findOne({userId:temp_id},{userId: 0,username:0,image:0})
                     
-                        UserImages.update(
-                          Meteor.userId(),
+                    console.log(temp_id)
+                    console.log(imageLocation)
+                      UserImages.update(
+                          {_id: tempImageId._id},
                           {$set: {
-                            username: Meteor.user().username,
                             image: imageLocation
                             }
                           }
-                        ) 
+                        ),
+                        
+                    Meteor.call("updateAllPostImages", temp_id, imageLocation)
+                        
+                        
                     // document.location.reload(true);
                     Bert.alert("Profile Image Update Succesfull!", "success", "growl-top-right")
                 }
