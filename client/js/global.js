@@ -5,5 +5,18 @@ Template.registerHelper('userImages', function(){
         return URL
     
 
-    
 });
+
+
+
+
+Template.registerHelper({
+    "click #myFunction": function(){
+            console.log('here')
+       var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+    }})

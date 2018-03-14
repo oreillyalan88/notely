@@ -4,27 +4,17 @@
     
     {{#each posts}}
 
-    <!-- Temperary Posts -->
+    <!--  Posts -->
     <div class="post">
         <div class="row">
             <div class="border-end">
             <div class =".col-sm-6 .col-md-5 .col-lg-6" id="info">
-                
-            <!--{{#with userImages}}-->
-            <!--<img src="{{image}}" class="profile-img">-->
-            <!--{{else}}-->
-            <!--<img src="github.svg" class="profile-img">-->
-            <!--{{/with}}-->
-                <!--<h1 class="post-title">{{postSubject}}</h1>-->
-                <!--<p class="meta">Posted By: {{author}} On: {{date}}</p>-->
-                
+
                     <div class="post-heading">
                         <div class="pull-left image">
                            
                             <img src="{{profilePic}}" class="img-circle avatar" alt="user profile image">
-                            <!--{{else}}-->
-                            <!--<img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">-->
-                            
+             
                         </div>
                         <div class="pull-left meta">
                             <div class="title h5">
@@ -46,6 +36,7 @@
                 <h3 class="count white block">{{downScore}}</h3>
             </div>
             </div>
+
                     {{> comments}}    
                     {{> commentForm}}
         </div>
@@ -54,4 +45,6 @@
     <h1>Nothing Posted Yet</h1>
 
     {{/each}}
+    
+
 </template>
