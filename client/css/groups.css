@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #dedede;
+    margin: 20px;
+}
+.card-style {
+    display: block;
+    height: 100px;
+    width: 600px;
+    margin: 20px 0px;
+    box-shadow: 1px 1px 8px #999;
+    cursor: pointer;
+    border: 1px solid #ececec;
+	box-shadow: 0 0 5px #8c8c8c;
+	background-color: #fafaff;
+}
+
+.card-style:hover {
+	
+	box-shadow: 0 0 20px #8c8c8c;
+}
+
+.card-img {
+     margin-top: 4px;
+     margin-left: 4px;
+    height: 90px;
+    width: 90px;
+}
+.media-heading {
+    margin-top: 10px;
+    color: #444;
+}
+.media-heading:hover, a:link {
+    color: #00C853;
+    text-decoration: none;
+}
+.members {
+    margin-top: 20px;
+    color: #999;
+    float: left;
+ }
+ .btn-part {
+     display: inline-block;
+     margin: 10px;
+     float: right;
+ }
+ .badge {
+     display: inline-block;
+     background: #00C853;
+     float: right;
+     padding: 7px;
+     border-radius: 50px;
+     margin: 10px;
+ }
