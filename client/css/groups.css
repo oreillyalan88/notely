@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #dedede;
+    /*background-color: #dedede;*/
     margin: 20px;
 }
 .card-style {
