@@ -1,5 +1,5 @@
-Template.search.rendered = function() {
-    
+Template.schools.rendered = function() {
+    // console.log(Template.parentData().slug)
     $("#search-link").addClass('selected')
     $("#posts-link").removeClass('selected')
     $("#rankings-link").removeClass('selected')
@@ -8,4 +8,12 @@ Template.search.rendered = function() {
     
     
     
+},
+
+Template.schools.helpers({
+  get_user: function() {
+      var slug= Template.parentData().slug
+      console.log(slug)
+    return  slug 
 }
+})

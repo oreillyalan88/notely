@@ -1,90 +1,41 @@
 <template name="search">
     
-<div class="container">
+    		   
+		   
+		 <div class="row">
+    
+
+                           
+                                <h2>Select Your College</h2>
+                       
+        
+            </div>
     	<br>
+	    {{#each colleges}}
+                <div class="row">
+                <div class="col-md-4 col-sm-6">
+                	
+                    <div class="card-style">
+                        <div class="media">
+
+                            <div class="media-left">
+                                <img class="media-object img-thumbnail card-img" src="{{logo}}">
+                            </div>
+
+                            <div class="media-body">
+                                <h4 class="media-heading">{{name}}</h4>
+                                <div class="members pull-left"><small>1.235 Members</small></div><a href="/search/{{slug}}/schools/">
+                                	<div class="btn btn-sm btn-danger pull-right btn-part">View Departments</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
 	
-		<div class="item tm5">
-		<img class ="college" src="http://www.educationinireland.com/images_upload/EiI/en/Where-can-I-study-/View-all-Institutes-of-Technology/ait_logo2014.gif">
-	<p>Athlone I.T.</p>
-    </div>
+	  {{else}}
+    <h1>Nothing Groups Created Yet - Contact Your Class Rep</h1>
 
-
-	<div class="item tm6">
-		<img class ="college" src="http://marketing.cit.ie/contentfiles/images/Logos/CIT_large/CIT%20MAIN%202012%20(REVERSE%20RED-RGB)1.jpg">
-	<p>Cork I.T. </p>
-	</div>
-
-		<div class="item tm7">
-		<img class ="college" src="http://www.bimireland.ie/wp-content/uploads/2015/03/dit_crest1.png">
-	<p>Dublin I.T.</p>
-	</div>
-
-<br>
-	
-	<div class="item tm1">
-		<img class ="college" src="https://www.dkit.ie/sites/default/files/dkitlogofullcolour.jpg">
-	<p>Dundalk I.T.</p>
-</div>
-
-
-	<div class="item tm2">
-		<img class ="college" src="https://pbs.twimg.com/profile_images/950329101910446080/NgsGUwR2_400x400.jpg">
-	<p>Galway, Mayo I.T. </p>
-	</div>
-
-		<div class="item tm3">
-		<img class ="college" src="http://www.mypois.ie/img/tp/39-160731.jpg">
-	<p >Dun Laoghaire I.A.D.T</p>
-	</div>
-
-	<div class="item tm4">
-		<img class ="college" src="https://brazilsample.files.wordpress.com/2012/10/institute-of-technology-blanchardstown2.png">
-	<p> Blanchardstown I.T. </p>
-	</div>
-	<br>
-	
-		<div class="item tm5">
-		<img class ="college" src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/v1/721732/5b7583f9-63a9-4c21-8e6b-2df90b77a668_a1mqzz.jpg">
-	<p>Carlow I.T.</p>
-</div>
-
-
-	<div class="item tm6">
-		<img class ="college" src="https://www.acei.ie/ws-content/uploads/it-sligo_logo.jpg">
-	<p>Sligo I.T. </p>
-	</div>
-
-		<div class="item tm7">
-		<img class ="college" src="https://gradireland.com/sites/gradireland.com/files/public/field_institution_logo/itt_copy.jpg">
-	<p>Dublin I.T.T.</p>
-	</div>
-
-<br>
-
-	
-	
-	<div class="item tm8">
-		<img class ="college" src="https://www.nightcourses.com/wp-content/uploads/2009/07/itt.jpeg">
-	<p>Tralee I.T.</p>
-</div>
-
-
-	<div class="item tm2">
-		<img class ="college" src="https://gradireland.com/sites/gradireland.com/files/public/field_institution_logo/lyit-corporate-500x341_copy.jpg">
-	<p>Letterkenny I.T.</p>
-	</div>
-
-		<div class="item tm3">
-	<img class ="college" src="data:image/png;base64,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">
-	<p>Limerick I.T.</p>
-	</div>
-
-	<div class="item tm4">
-		<img class ="college" src="http://c0.thejournal.ie/media/2012/08/wit-2-390x285.jpg">
-	<p>Waterford I.T. </p>
-	</div>
-	
-	</div>
+    {{/each}}
 
     
     

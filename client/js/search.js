@@ -10,13 +10,17 @@ Template.search.rendered = function() {
     
 }
 
+Template.search.helpers({
 
-Template.search.helper({
-    'colleges' : function(){
-        return Colleges.find({},
-            {sort: {name:1}}
-        )
+    colleges: function() {
+        var colleges = Colleges.find({},
+        {
+            sort: {name:1}
+            
+        }
+        );
+        
+       return colleges
+        
     }
-    
-    
 })
