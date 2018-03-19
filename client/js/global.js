@@ -13,6 +13,9 @@ Template.schools.helpers({
 
 
 
+
+
+
 Template.registerHelper('userImages', function(){
         var username = Meteor.user().username
         var userId = Meteor.userId();

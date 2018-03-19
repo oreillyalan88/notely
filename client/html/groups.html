@@ -1,55 +1,66 @@
 <template name="groups">
+    
+    
+    <div class="row main">
+				<div class="main-login main-center">
+				    
+					<form class="course-register">
+					    <div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="currentcollegeId" id="currentcollegeId" readonly  value="{{currentCollege_id}}"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="courseName" id="courseName"  placeholder="Course Name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="currentDapartmentName" id="currentDapartmentName" readonly  value="{{currentDapartmentName}}"/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group ">
+							<button class="btn btn-primary pull-right"  type="submit">Add Course</button>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+    
+    
+	    {{#each courses}}
+  
+    
                 <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="card-style">
                         <div class="media">
 
                             <div class="media-left">
-                                <img class="media-object img-thumbnail card-img" src="https://bootdey.com/img/Content/user_1.jpg">
+                                <img class="media-object img-thumbnail card-img" src="{{logo}}">
                             </div>
 
                             <div class="media-body">
-                                <a href="#"><h5 class="media-heading">Disc. Programação Internet Rica - 2016.2</h5></a>
-                                <div class="members pull-left"><small>1.235 Members</small></div><div class="btn btn-sm btn-danger pull-right btn-part">Join Group</div>
+                                <h5 class="media-heading">{{name}}</h5>
+                                <div class="members pull-left"><small>1.235 Members</small></div><div class="btn btn-sm btn-danger pull-right btn-part">View Modules</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card-style">
-                        <div class="media">
-
-                            <div class="media-left">
-                                <img class="media-object img-thumbnail card-img" src="https://lorempixel.com/300/300/technics/1/">
-                            </div>
-
-                            <div class="media-body">
-                                <a href="#"><h5 class="media-heading">Disc. Programação Internet Rica - 2016.2</h5></a>
-                                <div class="members pull-left"><small>1.235 Members</small></div><div class="btn btn-sm btn-danger pull-right btn-part">Join Group</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-             <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card-style">
-                        <div class="media">
-
-                            <div class="media-left">
-                                <img class="media-object img-thumbnail card-img" src="https://goo.gl/Xfk2oe">
-                            </div>
-
-                            <div class="media-body">
-                                <a href="#"><h5 class="media-heading">Disc. Programação Internet Rica - 2016.2</h5></a>
-                                <div class="members pull-left"><small>1.235 Members</small></div><div class="btn btn-sm btn-danger pull-right btn-part">Join Group</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                  {{/each}}
 </template>
