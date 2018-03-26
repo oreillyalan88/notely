@@ -9,7 +9,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="currentcollegeId" id="currentcollegeId" readonly  value="{{currentCollege_id}}"/>
+									<input type="text" class="form-control" name="currentCourseName" id="currentCourseName" readonly placeholder="{{get_college.thisDepartment.name}}" value="{{get_college.thisDepartment._id}}"/>
 								</div>
 							</div>
 						</div>
@@ -18,7 +18,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="courseName" id="courseName"  placeholder="Course Name"/>
+									<input type="text" class="form-control" name="modulename" id="modulename"  placeholder="Module Name"/>
 								</div>
 							</div>
 						</div>
@@ -27,7 +27,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="currentDapartmentName" id="currentDapartmentName" readonly  value="{{currentDapartmentName}}"/>
+									<input type="text" class="form-control" name="currentCourseYear" id="currentCourseYear" readonly  value="{{get_college.year_slug}}"/>
 								</div>
 							</div>
 						</div>
@@ -55,9 +55,9 @@
                             </div>
 
                             <div class="media-body">
-                                <h5 class="media-heading">{{name}}</h5>                                
+                                <h5 class="media-heading">{{moduleName}}</h5>                                
                                 <div class="members pull-left"><small>1.235 Members</small></div><a href="">
-                                <div class="btn btn-sm btn-danger pull-right btn-part">View Year</div></a>
+                                <div class="btn btn-sm btn-danger pull-right btn-part">View Posts</div></a>
                             </div>
                         </div>
                     </div>

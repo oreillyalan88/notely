@@ -8,7 +8,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="currentCourseId" id="currentCourseId" readonly  value="{{thisCourse._id._str}}"/>
+									<input type="text" class="form-control" name="currentCourseId" id="currentCourseId" readonly  placeholder="{{get_departments._id}}" value="{{get_departments._id}}" />
 								</div>
 							</div>
 						</div>
@@ -17,7 +17,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="courseName" id="courseName" readonly value="{{thisCourse.name}}"/>
+									<input type="text" class="form-control" name="courseName" id="courseName" readonly value="{{get_departments.name}}"/>
 								</div>
 							</div>
 						</div>
@@ -26,7 +26,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-photo fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="courseImage" id="courseImage" readonly value="{{thisCourse.logo}}"/>
+									<input type="text" class="form-control" name="courseImage" id="courseImage" readonly value="{{get_departments.logo}}"/>
 								</div>
 							</div>
 						</div>
