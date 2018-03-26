@@ -1,0 +1,84 @@
+<template name="years">
+
+<div class="row main">
+				<div class="main-login main-center">
+				    
+					<form class="year-register">
+					    <div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="currentCourseId" id="currentCourseId" readonly  value="{{thisCourse._id._str}}"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="courseName" id="courseName" readonly value="{{thisCourse.name}}"/>
+								</div>
+							</div>
+						</div>
+												
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-photo fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="courseImage" id="courseImage" readonly value="{{thisCourse.logo}}"/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<select   id="courseYear" class="form-control">
+                                      <option value="1">Year 1</option>
+                                      <option value="2">Year 2</option>
+                                      <option value="3">Year 3</option>
+                                      <option value="4">Year 4</option>
+                                    </select>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group ">
+							<button class="btn btn-primary pull-right"  type="submit">Add Course Year</button>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+    
+    
+	    {{#each years}}
+  
+    
+                <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-style">
+                        <div class="media">
+
+                            <div class="media-left">
+                                <img class="media-object img-thumbnail card-img" src="{{logo}}">
+                            </div>
+
+                            <div class="media-body">
+                                <h5 class="media-heading">{{course}} - Year {{year}}</h5>
+                                <div class="members pull-left"><small>1.235 Members</small></div><a href="/search/{{slugify(get_college)}}/{{slugify(get_departments.department)}}/{{slugify(get_departments.name)}}/{{year}}">
+                                <div class="btn btn-sm btn-danger pull-right btn-part">View Year</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        	 {{else}}
+                <h1>No 'Years' for this course established yet - Contact Your Class Rep</h1>
+        
+            {{/each}}    
+</template>

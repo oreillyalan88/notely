@@ -1,18 +1,29 @@
-Template.groups.rendered = function(){
+Template.course.rendered = function(){
     
         
-    $("#posts-link").removeClass('selected')
-    $("#profile-link").removeClass('selected')
-    $("#rankings-link").removeClass('selected')
-    $("#search-link").removeClass('selected')
-    $("#login-link").removeClass('selected')
-    $("#group-link").addClass('selected')
+    // $("#posts-link").removeClass('selected')
+    // $("#profile-link").removeClass('selected')
+    // $("#rankings-link").removeClass('selected')
+    // $("#search-link").removeClass('selected')
+    // $("#login-link").removeClass('selected')
+    // $("#group-link").addClass('selected')
   
     
 }
 
 
-Template.groups.events({
+
+Template.course.helpers({
+  get_college: function() {
+      var _id= Template.parentData().currentCollege_id
+      var slug = Departments.findOne({collegeId: _id}).collegeName
+      //console.log(slug)
+      return  slug 
+}
+
+})
+
+Template.course.events({
    "submit .course-register": function(event){
       
       var collegeId = event.target.currentcollegeId.value;
@@ -30,7 +41,7 @@ Template.groups.events({
                
               event.target.courseName.value ="";
                    
-              Bert.alert("Course Was Added Succesfully!", "success", "growl-top-right")   
+              
                
          } else {
               Bert.alert("Error Occured", "danger", "growl-top-right")
@@ -45,14 +56,3 @@ Template.groups.events({
 
 
 
-var trimInput = function(val){
-    return val.replace(/^\s*|\s*$/g, "") //if these values are found, replace with empty string
-}
-
-var isNotEmpty = function(val){
-    if(val && val !== ''){
-        return true;
-    }
-    Bert.alert("Please fill in all fields", "danger", "growl-top-right")
-    return false;
-}

@@ -31,3 +31,6 @@ session                       # Session provides a global object on the client t
 meteortoys:allthings          # An in-app debugOnly development tool
 cfs:standard-packages         #  
 cfs:gridfs                    #  
+momentjs:moment
+copleykj:livestamp
+wizonesolutions:underscore-string

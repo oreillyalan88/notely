@@ -1,0 +1,70 @@
+<template name="course">
+    
+    
+    <div class="row main">
+				<div class="main-login main-center">
+				    
+					<form class="course-register">
+					    <div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="currentcollegeId" id="currentcollegeId" readonly  value="{{currentCollege_id}}"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="courseName" id="courseName"  placeholder="Course Name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="currentDapartmentName" id="currentDapartmentName" readonly  value="{{currentDapartmentName}}"/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group ">
+							<button class="btn btn-primary pull-right"  type="submit">Add Course</button>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+    
+    
+	    {{#each courses}}
+  
+    
+                <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-style">
+                        <div class="media">
+
+                            <div class="media-left">
+                                <img class="media-object img-thumbnail card-img" src="{{logo}}">
+                            </div>
+
+                            <div class="media-body">
+                                <h5 class="media-heading">{{name}}</h5>
+                                <div class="members pull-left"><small>1.235 Members</small></div><a href="/search/{{slugify(get_college)}}/{{slugify(department)}}/{{slugify(name)}}">
+                                <div class="btn btn-sm btn-danger pull-right btn-part">View Year</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	  {{else}}
+    <h1>No 'Courses' have been added yet - Contact Your Class Rep</h1>
+
+    {{/each}}
+</template>

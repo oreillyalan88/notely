@@ -1,10 +1,10 @@
-<template name="groups">
+<template name="modules">
     
     
     <div class="row main">
 				<div class="main-login main-center">
 				    
-					<form class="course-register">
+					<form class="modules-register">
 					    <div class="form-group">
 							<div class="cols-sm-10">
 								<div class="input-group">
@@ -34,7 +34,7 @@
 
 
 						<div class="form-group ">
-							<button class="btn btn-primary pull-right"  type="submit">Add Course</button>
+							<button class="btn btn-primary pull-right"  type="submit">Add Module</button>
 						</div>
 						
 					</form>
@@ -42,7 +42,7 @@
 			</div>
     
     
-	    {{#each courses}}
+	    {{#each modules}}
   
     
                 <div class="row">
@@ -55,12 +55,16 @@
                             </div>
 
                             <div class="media-body">
-                                <h5 class="media-heading">{{name}}</h5>
-                                <div class="members pull-left"><small>1.235 Members</small></div><div class="btn btn-sm btn-danger pull-right btn-part">View Modules</div>
+                                <h5 class="media-heading">{{name}}</h5>                                
+                                <div class="members pull-left"><small>1.235 Members</small></div><a href="">
+                                <div class="btn btn-sm btn-danger pull-right btn-part">View Year</div></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                  {{/each}}
+	  {{else}}
+    <h1>No 'Modules' have been added yet - Contact Your Class Rep</h1>
+
+    {{/each}}
 </template>

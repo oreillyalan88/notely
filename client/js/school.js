@@ -11,9 +11,10 @@ Template.schools.rendered = function() {
 },
 
 Template.schools.helpers({
-  get_user: function() {
+  get_college: function() {
       var slug= Template.parentData().slug
       console.log(slug)
     return  slug 
 }
+
 })
