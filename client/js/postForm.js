@@ -10,7 +10,7 @@ Template.postForm.events({
         if(isNotEmpty(postSubject) &&
               isNotEmpty(postInput)){
                    
-              Meteor.call('addPosts', postSubject, postInput)    
+              Meteor.call('addPosts', postSubject, postInput, moduleId)    
                
               event.target.postSubject.value ="";
               event.target.postInput.value ="";
@@ -27,6 +27,16 @@ Template.postForm.events({
         
     },
     
+})
+
+Template.postForm.helpers({
+  get_data: function() {
+
+      var slug= Template.parentData()
+      console.log(slug)
+      return  slug
+  },      
+  
 })
 
 //validation rules

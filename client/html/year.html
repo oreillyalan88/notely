@@ -1,6 +1,6 @@
 <template name="years">
-
-<div class="row main">
+    {{#if isInRole 'admin'}}
+		<div class="row main">
 				<div class="main-login main-center">
 				    
 					<form class="year-register">
@@ -54,7 +54,7 @@
 					</form>
 				</div>
 			</div>
-    
+    	{{/if}}
     
 	    {{#each years}}
   

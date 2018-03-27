@@ -1,7 +1,7 @@
 Tracker.autorun(function(){
-    if(Meteor.userId()){
-        Router.go("/posts");
-    }
+    // if(Meteor.userId()){
+    //     Router.go("/posts");
+    // }
 })
 
 Template.login.rendered = function(){
@@ -73,7 +73,7 @@ var isEmail = function(val){
 }
 
 //check password field
- isValidPassword = function(password){
+var isValidPassword = function(password){
     if(password.length<6){
         Bert.alert("Password must be at least 6 characthers", "danger",  "growl-top-right")
         return false;
@@ -83,7 +83,7 @@ var isEmail = function(val){
 
 //check password match
 
- areValidPasswords = function(password, confirm){
+var areValidPasswords = function(password, confirm){
     if(!isValidPassword(password)){
         return false
     }

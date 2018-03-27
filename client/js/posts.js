@@ -8,20 +8,20 @@ Template.posts.rendered = function() {
     
 }
 
-Template.posts.helpers({
+// Template.posts.helpers({
 
-    posts: function() {
-        var posts = Posts.find({},
-        {
-            sort: {createdAt:-1}
+//     posts: function() {
+//         var posts = Posts.find({},
+//         {
+//             sort: {createdAt:-1}
             
-        }
-        );
+//         }
+//         );
         
-       return posts
+//       return posts
         
-    }
-})
+//     }
+// })
 
 Template.posts.events({
     
