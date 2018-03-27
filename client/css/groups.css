@@ -31,10 +31,7 @@ body {
     margin-top: 10px;
     color: #444;
 }
-.media-heading:hover, a:link {
-    color: #00C853;
-    text-decoration: none;
-}
+
 .members {
     margin-top: 20px;
     color: #999;
@@ -47,7 +44,6 @@ body {
  }
  .badge {
      display: inline-block;
-     background: #00C853;
      float: right;
      padding: 7px;
      border-radius: 50px;

@@ -43,12 +43,6 @@
 	
 }
 
-.item  a {
-	color: #fff;
-
-	
-}
-
 .item:hover {
 	transform: none;
 	transform: scale(1.5);
@@ -76,10 +70,5 @@
 	
 }
 
-p.ar {
-font-family: 'Rakkas', cursive;
-	font-size:1.1em;
-
-}
 
 

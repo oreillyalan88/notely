@@ -57,7 +57,37 @@ Template.modules.events({
                         
          return false;
 
-}});
+},
+    
+    
+       "click #sub": function(){
+      
+        var thisUser = Meteor.userId();
+        var thisModule = Modules.findOne({_id: this._id})._id
+        // var postAuthor = Modules.findOne({_id: this._id}).userId
+        var Name = Meteor.user().username;
+        var thisPostsRequests = Modules.findOne({_id: this._id},{requested: {$in: Name}}).requested;
+        
+        console.log('thisUser = '+thisUser+ '\n' + 
+                     'thisModule = '+thisModule+  '\n' + 
+                     'Name = '+Name+ '\n' +  
+                     'thisPostsRequests = '+thisPostsRequests);
+      
+      if(thisPostsRequests.indexOf(Name)>-1){
+            Bert.alert("Your request is already pending", "danger", "growl-top-right");
+            //in the array
+            
+         }else{
+            //do stuff
+            Meteor.call("joinRequest", thisModule, Name)
+
+
+            Bert.alert("You request is under review", "success", "growl-top-right");
+        }
+             return false;
+}
+    
+});
 
 
 
