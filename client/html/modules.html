@@ -44,7 +44,7 @@
     
 	    {{#each modules}}
   
-    
+    	
                 <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="card-style">
@@ -58,7 +58,7 @@
                                 <h5 class="media-heading">{{moduleName}}</h5>                                
                                 <div class="members pull-left"><small>1.235 Members</small></div>
  								
- 								{{#if isInRole 'object-oriented-programming-part-1'}}
+ 								{{#if isInRole (_id)}}
                                 <a href="/search/{{get_college.college_slug}}/{{get_college.department_slug}}/{{get_college.course_slug}}/{{year}}/{{slugify(moduleName)}}/posts"><div class="btn btn-sm btn-danger pull-right btn-part">View Posts</div></a>
                             	{{else}}
                             	<button class="btn btn-sm btn-success pull-right btn-part" id="sub">Subscribe</button>

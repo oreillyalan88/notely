@@ -26,12 +26,16 @@ Template.Request.events({
        var adminId = Meteor.userId()
        var userName = this.data.name;
        var moduleName = this.moduleName;
-        
-    Meteor.call("approveRequest", adminId, moduleName, userName)
-    Meteor.call("deleteRequest", adminId, moduleName, userName)
+       var moduleId = Modules.findOne({moduleName:moduleName,admin_id:adminId})._id
+       var userId = Meteor.users.findOne({username:userName})._id
+       
+       var ModuleCode = moduleName+"_"+moduleId;
 
-
-    Bert.alert("User: "+userName+" has been granted access to "+moduleName, "success", "growl-top-right");
+          Meteor.call("approveRequest", adminId, moduleName, userName)
+          Meteor.call("deleteRequest", adminId, moduleName, userName)
+          Meteor.call("addRoles", userId,ModuleCode)
+    
+         Bert.alert("User: "+userName+" has been granted access to "+moduleName, "success", "growl-top-right");
    
     return false;
   },

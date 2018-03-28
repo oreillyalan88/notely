@@ -21,6 +21,7 @@ Template.registerHelper('slugify', function(text) {
 }
 )
 
+
 Template.registerHelper({
     "click #myFunction": function(){
             console.log('here')
@@ -31,3 +32,5 @@ Template.registerHelper({
                 x.style.display = "none";
             }
     }})
+    
+    
