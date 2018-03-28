@@ -60,6 +60,7 @@ Template.profile.helpers({
 
 Template.profile.events({
     "click #delete-post": function(){
+  
         Meteor.call("removePost", this._id)
         Bert.alert("Post Deleted", "success", "growl-top-right")
 
@@ -67,7 +68,7 @@ Template.profile.events({
     
     "submit .edit-profile":function(event){
         var file =$('#profileImage').get(0).files[0];
-        
+        console.log(file)
         if(file){
             
             fsFile = new FS.File(file);

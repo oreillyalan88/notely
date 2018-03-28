@@ -66,14 +66,17 @@ Template.modules.events({
         var thisModule = Modules.findOne({_id: this._id})._id
         // var postAuthor = Modules.findOne({_id: this._id}).userId
         var Name = Meteor.user().username;
-        var thisPostsRequests = Modules.findOne({_id: this._id},{requested: {$in: Name}}).requested;
-        
+        var thisPostsRequests = Modules.findOne({_id: thisModule}).requested
+        // .requested.find(x => x.name === Name)
+         console.log(thisPostsRequests)
+         
+         
         console.log('thisUser = '+thisUser+ '\n' + 
                      'thisModule = '+thisModule+  '\n' + 
                      'Name = '+Name+ '\n' +  
                      'thisPostsRequests = '+thisPostsRequests);
-      
-      if(thisPostsRequests.indexOf(Name)>-1){
+      console.log((thisPostsRequests.filter(function(e){ return e.name === Name})))
+      if(thisPostsRequests.filter(function(thisPostsRequest){ return thisPostsRequest.name === Name}).length > 0){
             Bert.alert("Your request is already pending", "danger", "growl-top-right");
             //in the array
             

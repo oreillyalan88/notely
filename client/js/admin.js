@@ -44,28 +44,20 @@ Template.admin.helpers({
 
 Template.admin.events({
     
-    "click #approve": function(event){
-
-        
-        
-        
-        // var thisModule = Modules.findOne({requested: {name:this.requested.name}})._id
-        // var postAuthor = Modules.findOne({_id: this._id}).userId
-        // var Name = Meteor.user().username;
-        // var thisPostsRequests = Modules.findOne({_id: this._id},{requested: {$in: Name}}).requested;
-        
-  
-        
-        // console.log(userProfilePic)
-        
-        // Meteor.call("approveRequest", thisModule, Name)
-     
-    },
+    // "click input[type=submit]": function(e, t) {
+    //     if ($(e.target).prop("id") == "approveScenarioButton") {
+    //         // Save the scenario
     
-    
-    "click #reject": function(){
-        console.log("goodbye")
+    //         // console.log(t.data);                   
+    //         // // console.log(t.data.name); 
 
-    },
+    //             return false
+    //     } else if ($(e.target).prop("id") == "rejectScenarioButton") {
+    //         // Submit the scenario
+    //         console.log("you")
+            
+    //     }
+
+    // }
 
 })

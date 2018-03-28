@@ -1,0 +1,16 @@
+<template name="Request">
+  <div class="card-style">
+    <div class="media">
+        <div class="media-left">
+            <img class="media-object img-thumbnail card-img" src="{{userProfilePic(data.name)}}">
+            </div>
+      <div class="media-body">
+        <h4 id="username">{{data.name}}</h4>
+        <!--<input type="submit" title="Reject" id="rejectScenarioButton"  value="Reject"/>-->
+        <!--<input type="submit" title="Approve" id="approveScenarioButton"  value="Approve"/>-->
+        <button class="btn btn-sm btn-danger pull-right btn-part" id="rejectScenarioButton" >&nbsp;&nbsp;Reject&nbsp;&nbsp;</button>
+        <button class="btn btn-sm btn-success pull-right btn-part" id="approveScenarioButton" >Approve</button>
+      </div>
+    </div>
+  </div>
+</template>

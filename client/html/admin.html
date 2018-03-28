@@ -4,30 +4,17 @@
 
 {{#if modules}}
             {{ #each module in modules }}
+
              <div class="row">
-                 <h4>{{module.moduleName}}</h4>
+                 <h4 id="modulename" >{{module.moduleName}}</h4>
                 <div class="col-md-4 col-sm-6">
                 	
-                	{{ #each request in module.requested }}
-                    <div class="card-style">
-                        <div class="media">
-
-                            <div class="media-left">
-                                <img class="media-object img-thumbnail card-img" src="{{userProfilePic(request.name)}}">
-                            </div>
-
-                            <div class="media-body">
-                                <h4>{{request.name}}</h4>
-                                
-                                <button class="btn btn-sm btn-danger btn-part">&nbsp;&nbsp;Deny&nbsp;&nbsp;</button>
-                                <button class="btn btn-sm btn-success btn-part" id="approve">Approve</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    {{/each}}
+                {{#each request in module.requested}}
+                  {{> Request data=request moduleName=module.moduleName}}                
+                {{/each}}
                 </div>
             </div> 
+         
             {{/each}}
 {{else}}
             	<h1>There is currently no join requests</h1>
