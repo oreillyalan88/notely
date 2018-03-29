@@ -1,7 +1,10 @@
+Template.profile.onCreated( function() {
+  this.currentTab = new ReactiveVar( "picture" );
+});
+
 Template.profile.rendered = function() {
     
-     this.currentTab = new ReactiveVar( "picture" );
-    
+
     $("#profile-link").addClass('selected')
     $("#posts-link").removeClass('selected')
     $("#rankings-link").removeClass('selected')
@@ -16,7 +19,13 @@ Template.profile.helpers({
     return Template.instance().currentTab.get();
     },
     
- 
+     
+    userPosts: function(){
+        var username = Meteor.user().username;
+        var userId = Meteor.userId();
+        var userPosts = Posts.find({userId: userId}, {},{sort: {createdAt: -1}});
+        return userPosts;
+    },
     
 });
 

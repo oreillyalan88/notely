@@ -4,6 +4,13 @@ Tracker.autorun(function(){
     // }
 })
 
+Template.login.helpers({
+    getEmail() {
+        return Meteor.user().emails && Meteor.user().emails[0].address;
+    }
+});
+
+
 Template.login.rendered = function(){
     
 
@@ -45,6 +52,19 @@ Template.login.events({
             }
         
         return false; // prevent submit for form validation
+    },
+    
+    'click button.log-in'(event) {
+        event.preventDefault();
+        Meteor.loginWithTwitter({requestPermissions: ['public_profile', 'email']}, function(err){
+            if (err) {
+                console.log('Handle errors here: ', err);
+            }
+        });
+    },
+    'click button.log-out'(event) {
+        event.preventDefault();
+        Meteor.logout();
     }
     
 })
