@@ -37,6 +37,12 @@ body {
     color: #999;
     float: left;
  }
+ 
+.members {
+    margin-top: 20px;
+    color: #999;
+    float: left;
+ }
  .btn-part {
      display: inline-block;
      margin: 10px;

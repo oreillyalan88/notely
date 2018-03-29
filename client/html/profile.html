@@ -1,33 +1,18 @@
 <template name="profile">
-    {{#if currentUser}}
-    <!-- this is where the user profile starts -->
-    <div id="profile-wrap">
-        <center>
-            {{#with userImages}}
-            <img src="{{image}}" class="profile-img">
-            <form class="edit-profile" enctype="multipart/form-data">
-                    <label for="profileImage">Choose Profile Image</label>
-                    <span id="filename"></span>
-                    <input type="file" name="profileImage" id="profileImage" class="black profileImage">
-                    <br>
-                    <button type="submit" value="Upload Photo" id="profile-btn" class="btn btn-sml btn-primary">
-                        Upload Photo
-                    </button>
-            </form>
-            {{/with}}
-            <h1 class="username">{{username}}</h1>
-            <h3>{{email}}</h3>
-                <div class="" id="">
-                    <img src="up.png" class="profile-rank" id="upvote">
-                    <img src="down.png" class="profile-rank" id="downvote">
-                </div>
-                <div class="score" id="">
-                    <h3 class="count black block">{{userUpScore}}</h3>
-                    <h3 class="count black block">{{userDownScore}}</h3>
-                </div>
-        </center>
-    </div>
+    
+ 
 
+    <div id="nav">
+        <ul class="nav nav-pills">
+        <li data-template="picture" role="presentation" class="active"> <a  href="#" >Edit Picture<span class="sr-only">(current)</span></a> </li>
+        <li data-template="edit_profile" role="presentation"> <a  href="#">Edit Profile</a> </li>
+        <li data-template="followers" role="presentation"> <a  href="#">Followers</a> </li>
+        <li data-template="following" role="presentation"> <a href="#">Following</a> </li>
+      </ul>
+    </div>
+    {{#if currentUser}}
+
+        {{> Template.dynamic template=tab}}
     <!-- end profile -->
     {{#each userPosts}}
 

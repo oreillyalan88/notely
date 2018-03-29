@@ -27,30 +27,35 @@ Template.Request.events({
        var userName = this.data.name;
        var moduleName = this.moduleName;
        var moduleId = Modules.findOne({moduleName:moduleName,admin_id:adminId})._id
+
        var userId = Meteor.users.findOne({username:userName})._id
-       
-       var ModuleCode = moduleName+"_"+moduleId;
+
 
           Meteor.call("approveRequest", adminId, moduleName, userName)
           Meteor.call("deleteRequest", adminId, moduleName, userName)
-          Meteor.call("addRoles", userId,ModuleCode)
+          Meteor.call("addRoles", userId,moduleId)
     
-         Bert.alert("User: "+userName+" has been granted access to "+moduleName, "success", "growl-top-right");
+          Bert.alert("User: "+userName+" has been granted access to "+moduleName, "success", "growl-top-right");
    
     return false;
   },
   
   'click #rejectScenarioButton': function() {
 
+    var adminId = Meteor.userId()
        var userName = this.data.name;
        var moduleName = this.moduleName;
-   
+       var moduleId = Modules.findOne({moduleName:moduleName,admin_id:adminId})._id
+       var userId = Meteor.users.findOne({username:userName})._id
+       var reject_id = Modules.findOne({moduleName:moduleName,admin_id:adminId}).reject_id
     
-    Meteor.call("countVotes", thisPost, Name)
-    Meteor.call("userDownVotePoint",postAuthor)
+          Meteor.call("rejectRequest", adminId, moduleName, userName)
+          Meteor.call("deleteRequest", adminId, moduleName, userName)
+          Meteor.call("addRoles", userId,reject_id)
 
 
-    Bert.alert("You Vote Was Placed", "success", "growl-top-right");
+        Bert.alert("User: "+userName+" has been denied access to "+moduleName, "danger", "growl-top-right");
+   
    
    
   }

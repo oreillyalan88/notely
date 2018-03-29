@@ -1,5 +1,5 @@
 #profile-wrap {
-	background-color: #e6e6e6;
+	background-color: #fafaff;
 	padding: 50px 20px;
 	margin-bottom: 50px;
 	border: 1px solid #ececec;
@@ -70,3 +70,37 @@ label:hover {
 #left-margin-sm {
 	margin-left: 2px;
 }
+
+
+
+#nav {
+  background-color: #fafaff;
+  text-align: center;
+  border-bottom: 1px solid #dbdbdb;
+	border: 1px solid #ececec;
+	box-shadow: 0 0 5px #8c8c8c;
+  
+}
+#nav ul {
+  list-style: none;
+  display: inline-block;
+  margin:0 auto;
+  padding:0;
+}
+#nav ul li {
+  float: left;
+  margin: 20px;
+
+  
+}
+#nav ul li a {
+	color: #141517;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: 700;
+	padding-left:10px;
+	padding-right:10px;
+	
+}
+	 
+#nav li.active a{color: white; border-bottom: 2px solid #FD3A13 }
