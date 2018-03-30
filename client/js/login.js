@@ -7,7 +7,9 @@ Tracker.autorun(function(){
 Template.login.helpers({
     getEmail() {
         return Meteor.user().emails && Meteor.user().emails[0].address;
-    }
+    },
+
+
 });
 
 
@@ -86,8 +88,36 @@ Template.login.events({
                         Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
                         Router.go("/posts")
                     }
+
+
                 }else if (profile.google){
                     console.log('Google')
+
+                    if(!Meteor.user().profile.upScore){
+
+                        let img_url = profile.google.picture;
+                        var email = profile.google.email
+                        var username = email.substring(0, email.lastIndexOf("@"));
+                        let fullName = Meteor.user().profile.name;
+                        // console.log(username,fullName)
+
+                        var temp = username;
+                        console.log(temp)
+                        if (checkIfUserExists(temp)){
+                            var append = makeId()
+                            temp = temp+append
+                            console.log(temp)
+                            Bert.alert("The username on your social media account already exists, a random username has been chose for you "+username, "danger", "growl-top-right")
+                        }
+
+                        Meteor.call('GoogleUserObjectScaffold', Meteor.userId(), temp, img_url, fullName)
+                        Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
+                        Router.go("/posts")
+                    }
+                    else {
+                        Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
+                        Router.go("/posts")
+                    }
 
                 }else if (profile.github){
                     console.log('Git')
@@ -147,4 +177,19 @@ var areValidPasswords = function(password, confirm){
     }
     
     return true;
+}
+
+var checkIfUserExists= function (username) {
+    return (Meteor.users.findOne({username: username})) ? true : false;
+}
+
+
+var makeId = function() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
 }
