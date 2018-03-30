@@ -19,7 +19,7 @@ shell-server@0.3.1            # Server-side component of the `meteor shell` comm
 
 
 
-fortawesome:fontawesome       # Scalable vector icons hich are customizable via CSS (Retina Friendly)
+fortawesome:fontawesome       # Scalable vector icons which are customizable via CSS (Retina Friendly)
 twbs:bootstrap
 iron:router                   # A router that works on the server and the browser, designed specifically for Meteor
 themeteorchef:bert            # A client side, multi-style alerts system for Meteor
@@ -37,4 +37,10 @@ wizonesolutions:underscore-string
 alanning:roles
 accounts-ui
 accounts-twitter
+accounts-facebook
+accounts-github
+accounts-google
+email
 service-configuration
+fourseven:scss
+nourharidy:ssl

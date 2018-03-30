@@ -1,4 +1,4 @@
-<template name="signup">
+<template name="signup" xmlns:text-align="http://www.w3.org/1999/xhtml">
     {{#if currentUser}}
         <h3 class="white">You are logged in. Return <a href="/"></a>Home</h3>
     {{else}}
@@ -17,9 +17,21 @@
         <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirm Password">      
 
 
-        <button type="submit" id="login-btn" class="btn btn-lg btn-primary btn-block">Log In</button>
-        
-    </form>
+        <button type="submit" id="login-btn" class="btn btn-primary btn-block">Log In</button>
 
+        <button class="btn btn-block btn-social btn-twitter" type="button" data-social-login="loginWithTwitter">
+            <span class="fa fa-twitter" ></span>Sign in with Twitter
+        </button>
+        <a class="btn btn-block btn-social btn-facebook"  type="button" data-social-login="loginWithFacebook">
+            <span class="fa fa-facebook" ></span>Sign in with Facebook
+        </a>
+        <a class="btn btn-block btn-social btn-github"  type="button" data-social-login="loginWithGithub">
+            <span class="fa fa-github"></span>Sign in with Github
+        </a>
+        <a class="btn btn-block btn-social btn-google"  type="button" data-social-login="loginWithGoogle">
+            <span class="fa fa-google"></span>Sign in with Google+
+        </a>
+
+    </form>
     {{/if}}
 </template>

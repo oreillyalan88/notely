@@ -53,20 +53,7 @@ Template.login.events({
         
         return false; // prevent submit for form validation
     },
-    
-    'click button.log-in'(event) {
-        event.preventDefault();
-        Meteor.loginWithTwitter({requestPermissions: ['public_profile', 'email']}, function(err){
-            if (err) {
-                console.log('Handle errors here: ', err);
-            }
-        });
-    },
-    'click button.log-out'(event) {
-        event.preventDefault();
-        Meteor.logout();
-    }
-    
+
 })
 
 //Trim Helper

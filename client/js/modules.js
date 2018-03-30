@@ -64,9 +64,9 @@ Template.modules.events({
     
        "click #sub": function(){
       
-        var thisModule = Modules.findOne({_id: this._id})._id
+        var thisModule = Module.findOne({_id: this._id})._id
         var Name = Meteor.user().username;
-        var thisPostsRequests = Modules.findOne({_id: thisModule}).requested
+        var thisPostsRequests = Module.findOne({_id: thisModule}).requested
 
       if(thisPostsRequests.filter(function(thisPostsRequest){ return thisPostsRequest.name === Name}).length > 0){
             Bert.alert("Your request is already pending", "danger", "growl-top-right");

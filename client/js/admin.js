@@ -8,7 +8,7 @@ Template.admin.rendered = function() {
 Template.admin.helpers({
 
     modules: function() {
-        modules = Modules.find(
+        modules = Module.find(
         {
             admin_id: Meteor.userId()
         },

@@ -26,7 +26,7 @@ Template.Request.events({
        var adminId = Meteor.userId()
        var userName = this.data.name;
        var moduleName = this.moduleName;
-       var moduleId = Modules.findOne({moduleName:moduleName,admin_id:adminId})._id
+       var moduleId = Module.findOne({moduleName:moduleName,admin_id:adminId})._id
 
        var userId = Meteor.users.findOne({username:userName})._id
 
@@ -45,9 +45,9 @@ Template.Request.events({
     var adminId = Meteor.userId()
        var userName = this.data.name;
        var moduleName = this.moduleName;
-       var moduleId = Modules.findOne({moduleName:moduleName,admin_id:adminId})._id
+       var moduleId = Module.findOne({moduleName:moduleName,admin_id:adminId})._id
        var userId = Meteor.users.findOne({username:userName})._id
-       var reject_id = Modules.findOne({moduleName:moduleName,admin_id:adminId}).reject_id
+       var reject_id = Module.findOne({moduleName:moduleName,admin_id:adminId}).reject_id
     
           Meteor.call("rejectRequest", adminId, moduleName, userName)
           Meteor.call("deleteRequest", adminId, moduleName, userName)
