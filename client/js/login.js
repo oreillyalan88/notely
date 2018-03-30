@@ -54,6 +54,52 @@ Template.login.events({
         return false; // prevent submit for form validation
     },
 
+    'click [data-social-login]' ( event, template ) {
+        const service = event.target.getAttribute( 'data-social-login' ),
+            options = {
+                requestPermissions: [ 'email' ]
+            };
+
+        if ( service === 'loginWithTwitter' ) {
+            delete options.requestPermissions;
+        }
+
+        Meteor[ service ]( options, ( error ) => {
+            if ( error ) {
+                Bert.alert( error.message, 'danger' );
+            }else{
+
+                let profile = Meteor.user().services;
+
+                if (profile.twitter){
+                    console.log('Twitter')
+                    if(!Meteor.user().profile.upScore){
+                        var img_url = profile.twitter.profile_image_url;
+                        img_url = img_url.replace(/_normal/g, "");
+                        let username = profile.twitter.screenName;
+                        let fullName = Meteor.user().profile.name;
+                        Meteor.call('TwitterUserObjectScaffold', Meteor.userId(), username, img_url, fullName)
+                        Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
+                        Router.go("/posts")
+                    }
+                     else {
+                        Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
+                        Router.go("/posts")
+                    }
+                }else if (profile.google){
+                    console.log('Google')
+
+                }else if (profile.github){
+                    console.log('Git')
+
+                }
+            }
+
+        });
+
+        return false; // prevent submit for form validation
+    }
+
 })
 
 //Trim Helper

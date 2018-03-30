@@ -67,8 +67,18 @@ Template.signup.events({
             if ( error ) {
                 Bert.alert( error.message, 'danger' );
             }
+            else{
+                Router.go('/posts')
+                Bert.alert("Your Are Now Logged In", "success", "growl-top-right")
+                console.log(Meteor.user())
+            }
+
         });
+
+
     }
+
+
 });
 
 
