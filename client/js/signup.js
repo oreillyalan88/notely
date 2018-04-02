@@ -39,7 +39,7 @@ Template.signup.events({
                 UserImages.insert({
                 userId: Meteor.userId(),
                 username: username,
-                image: 'https://bootdey.com/img/Content/user_1.jpg',
+                image: '/400x400.jpg',
                         })
                         ,
               Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
