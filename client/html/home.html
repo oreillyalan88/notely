@@ -27,6 +27,12 @@
             </div>
                     
             <p class="regular post-content">{{postInput}}</p>
+
+                {{#each upload in uploads}}
+                <li class="regular-uploads" style="list-style-type: none;"><a href="{{upload.file}}" name="postUpload" id="postUpload" >{{upload.name}}</a>
+                </li>
+                {{/each}}
+
             <div class =".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-offset-0" id="vote">
                 <img src="/up.png" class="rank" id="upvote">
                 <img src="/down.png" class="rank" id="downvote">

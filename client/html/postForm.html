@@ -3,14 +3,20 @@
     {{#if currentUser}}
     <!-- Post Form -->
         <div id="postForm-wrap">
-            
-          <form class="form-post">
+
+            <form class="form-post">
           <h2 class ="postForm-heading">What's New</h2>
-                
+
 
             <textarea name="postInput" id="postInput" class="form-control" maxlength="6000"
             placeholder="What's on your mind?"></textarea>
-            
+                {{#each theTemps}}
+                <ul class="uploads" style="list-style-type: none;" >
+                <li><a href="{{file}}" name="postUpload" id="postUpload" >{{name}}</a> <button id="deleteFileButton" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button></li>
+                </ul>
+                {{/each}}
             <button class="btn btn-primary pull-right" type="submit">Post</button>
              
              
@@ -18,10 +24,10 @@
                   <!--<a href=""><i class="glyphicon glyphicon-upload" id="your-upload-class" type="file"></i></a>-->
                   <li><div class="image-upload">
                     <label for="file-input">
-                         <i class="your-upload-class glyphicon glyphicon-upload" aria-hidden="true"></i>
+                         <i class="glyphicon glyphicon-upload your-upload-logo" aria-hidden="true"></i>
                       </label>
 
-                      <input id="file-input" type="file"/>
+                      <input class="your-upload-class" id="file-input"  type="file"/>
                   </div></li>
 
                   <li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li>
@@ -34,7 +40,7 @@
         <tbody>
         {{#each theFiles}}
         <tr>
-            <td>{{livestamp uploadedAt}}</td><td>{{original.name}}</td><td><a href="{{url}}">link</a></td><td>{{#if isUploaded}}uploaded{{else}}uploading...{{/if}}</td><td><button id="deleteFileButton">delete</button></td>
+            <td>{{livestamp uploadedAt}}</td><td>{{original.name}}</td><td><a href="{{url}}">link</a></td><td>{{#if isUploaded}}uploaded{{else}}uploading...{{/if}}</td><td><button id="deleteRealFileButton">delete {{change}}</button></td>
         </tr>
         {{/each}}
         </tbody>
@@ -53,5 +59,6 @@
     </div>
     <!-- End Post Form-->
     {{/if}}
-    
+
+
 </template>

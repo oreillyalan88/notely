@@ -11,12 +11,16 @@
 	box-shadow: 0 0 5px #8c8c8c;
 	background-color: #fafaff;
 	padding: 1px 20px;
-	margin: 0px 0px 20px 0px;
+	margin: 0px 0px 65px 0px;
 }
 
 .post:hover {
 	
 	box-shadow: 0 0 20px #8c8c8c;
+}
+
+.post .regular-uploads {
+	margin-bottom:10px
 }
 
 

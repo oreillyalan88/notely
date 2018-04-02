@@ -6,6 +6,15 @@
 	box-shadow: 0 0 5px #8c8c8c;
 	/*background-color: #e6e6e6;*/
 }
+#postForm-wrap .uploads{
+	padding-left: 0;
+}
+
+
+#postForm-wrap .pull-right{
+	margin-top: 10px;
+}
+
 
 .image-upload > input
 {
@@ -21,7 +30,7 @@
 }
 
 
-.your-upload-class
+.your-upload-logo
 {
 	cursor: pointer;
 }

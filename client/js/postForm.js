@@ -1,18 +1,22 @@
 Template.postForm.rendered = function(){
-    
 }
 
 Template.postForm.events({
     "submit .form-post":function(event){
-        var postSubject = event.target.postSubject.value;
         var postInput = event.target.postInput.value;
-        
-        if(isNotEmpty(postSubject) &&
-              isNotEmpty(postInput)){
+        // var postSubject = event.target.postSubject.value;
+        console.log(postInput)
+
+        if(postInput.length === 0){
+            Bert.alert("Please fill in all fields", "danger", "growl-top-right")
+            return false;
+
+        }
+        if(isNotEmpty(postInput)){
                    
-              Meteor.call('addPosts', postSubject, postInput, moduleId)    
+              Meteor.call('addPosts', postInput)
                
-              event.target.postSubject.value ="";
+              // event.target.postSubject.value ="";
               event.target.postInput.value ="";
                    
               Bert.alert("Your Post Was Succesful!", "success", "growl-top-right")   
@@ -27,31 +31,59 @@ Template.postForm.events({
         
     },
 
-    'click #deleteFileButton ': function (event) {
+    'click #deleteTempFileButton ': function ( event) {
+        event.preventDefault();
         console.log("deleteFile button ", this);
-        FileCollection.remove({_id: this._id});
+        Meteor.call('removeTempUpload', this.upload_id);
     },
-    'change #your-upload-class': function (event, template) {
+
+    'click #deleteRealFileButton ': function ( event) {
+        event.preventDefault();
+        console.log("deleteFile button ", this);
+        var id= this._id
+        console.log(id)
+        FileCollection.remove({_id: this._id});
+        Meteor.call('deletePostByUpload',id)
+    },
+
+    'change .your-upload-class': function (event, template) {
+        event.preventDefault();
         console.log("uploading...")
         FS.Utility.eachFile(event, function (file) {
             console.log("each file...");
             var yourFile = new FS.File(file);
-            FileCollection.insert(yourFile, function (err, fileObj) {
+            yourFile.metadata = {
+                fileOwner: Meteor.userId()
+            }
+            FileCollection.insert(yourFile, function (err, result ){
                 console.log("callback for the insert, err: ", err);
+               var fileLocation = 'http://localhost:3000/cfs/files/FileCollection/'+result._id+'/'+result.original.name
+
                 if (!err) {
                     console.log("inserted without error");
+                    $("#file-input").replaceWith($("#file-input").val('').clone(true));
+
+                    TempPostCollection.insert({upload_id: result._id,userId: Meteor.userId(), file: fileLocation , name:result.original.name })
+
+
+
+
+
                 }
                 else {
                     console.log("there was an error", err);
                 }
             });
         });
-    }
+    },
+
+
     
 })
 
 Template.postForm.helpers({
   get_data: function() {
+
 
       var slug= Template.parentData()
       console.log(slug)
@@ -60,13 +92,17 @@ Template.postForm.helpers({
 
     theFiles: function () {
         return FileCollection.find();
+    },
+
+    theTemps: function () {
+        return TempPostCollection.find();
     }
   
 })
 
 //validation rules
 var isNotEmpty = function(val){
-    if(val && val !== ''){
+    if(val !== ''){
         return true;
     }
     Bert.alert("Please fill in all fields", "danger", "growl-top-right")

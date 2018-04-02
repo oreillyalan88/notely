@@ -1,0 +1,19 @@
+<template name="shared">
+
+    <div id="profile-wrap">
+    {{#each theFiles}}
+    <table border="1">
+        <tbody>
+        {{#each theFile in theFiles}}
+        <tr>
+            <td>{{theFile/uploadedAt}}</td><td>{{theFile.original.name}}</td><td><a href="{{url}}">link</a></td><td><button id="deleteFileButton">delete</button></td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <h1>No files uploaded</h1>
+    {{/each}}
+    </div>
+
+</template>
