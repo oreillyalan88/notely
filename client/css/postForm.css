@@ -6,3 +6,22 @@
 	box-shadow: 0 0 5px #8c8c8c;
 	/*background-color: #e6e6e6;*/
 }
+
+.image-upload > input
+{
+	display: none;
+	border: none;
+}
+
+
+.image-upload > label
+{
+
+	border: none;
+}
+
+
+.your-upload-class
+{
+	cursor: pointer;
+}

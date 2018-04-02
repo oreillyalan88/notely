@@ -8,20 +8,10 @@ Template.posts.rendered = function() {
     
 }
 
-// Template.posts.helpers({
+Template.posts.helpers({
 
-//     posts: function() {
-//         var posts = Posts.find({},
-//         {
-//             sort: {createdAt:-1}
-            
-//         }
-//         );
-        
-//       return posts
-        
-//     }
-// })
+
+})
 
 Template.posts.events({
     
@@ -80,7 +70,8 @@ Template.posts.events({
             Bert.alert("You Cannot Vote For Your Own Post", "danger", "growl-top-right")
             
         }
-    }
+    },
+
     
     
 })

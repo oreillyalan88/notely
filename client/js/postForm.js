@@ -26,6 +26,27 @@ Template.postForm.events({
 
         
     },
+
+    'click #deleteFileButton ': function (event) {
+        console.log("deleteFile button ", this);
+        FileCollection.remove({_id: this._id});
+    },
+    'change #your-upload-class': function (event, template) {
+        console.log("uploading...")
+        FS.Utility.eachFile(event, function (file) {
+            console.log("each file...");
+            var yourFile = new FS.File(file);
+            FileCollection.insert(yourFile, function (err, fileObj) {
+                console.log("callback for the insert, err: ", err);
+                if (!err) {
+                    console.log("inserted without error");
+                }
+                else {
+                    console.log("there was an error", err);
+                }
+            });
+        });
+    }
     
 })
 
@@ -35,7 +56,11 @@ Template.postForm.helpers({
       var slug= Template.parentData()
       console.log(slug)
       return  slug
-  },      
+  },
+
+    theFiles: function () {
+        return FileCollection.find();
+    }
   
 })
 
