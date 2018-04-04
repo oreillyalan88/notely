@@ -100,11 +100,3 @@ Template.postForm.helpers({
   
 })
 
-//validation rules
-var isNotEmpty = function(val){
-    if(val !== ''){
-        return true;
-    }
-    Bert.alert("Please fill in all fields", "danger", "growl-top-right")
-    return false;
-}

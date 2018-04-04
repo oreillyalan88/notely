@@ -62,17 +62,3 @@ Template.years.events({
 
 }});
 
-
-
-
-var trimInput = function(val){
-    return val.replace(/^\s*|\s*$/g, "") //if these values are found, replace with empty string
-}
-
-var isNotEmpty = function(val){
-    if(val && val !== ''){
-        return true;
-    }
-    Bert.alert("Please fill in all fields", "danger", "growl-top-right")
-    return false;
-}

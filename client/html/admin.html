@@ -12,6 +12,9 @@
                 	
                 {{#each request in module.requested}}
                   {{> Request data=request moduleName=module.moduleName}}                
+                {{else}}
+                    <h4 >No Join Requests Received Yet for this module</h4>
+
                 {{/each}}
                 </div>
             </div> 

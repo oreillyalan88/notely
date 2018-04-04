@@ -28,7 +28,7 @@ Template.modules.events({
    "submit .modules-register": function(event){
       
       var currentCourseId = event.target.currentCourseName.value;
-      var modulename = trimInput(event.target.modulename.value);
+      var modulename = event.target.modulename.value;
       var currentCourseYear = event.target.currentCourseYear.value;
 
 
@@ -47,10 +47,10 @@ Template.modules.events({
                
         } else {
              
-               Bert.alert("Module Was Added Succesfully!", "success", "growl-top-right")   
-               event.target.courseYear.value ="1";
+               Bert.alert("Module Was Added Successfully!", "success", "growl-top-right")
+               event.target.modulename.value ="";
         }
-      })   
+      }.bind(this));
        
   } else {
               Bert.alert("Error Occured", "danger", "growl-top-right")
@@ -86,15 +86,3 @@ Template.modules.events({
 
 
 
-
-var trimInput = function(val){
-    return val.replace(/^\s*|\s*$/g, "") //if these values are found, replace with empty string
-}
-
-var isNotEmpty = function(val){
-    if(val && val !== ''){
-        return true;
-    }
-    Bert.alert("Please fill in all fields", "danger", "growl-top-right")
-    return false;
-}

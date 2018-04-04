@@ -25,34 +25,42 @@ Template.course.helpers({
 
 Template.course.events({
    "submit .course-register": function(event){
-      
+
+
       var collegeId = event.target.currentcollegeId.value;
-      var courseName = trimInput(event.target.courseName.value);
+      var courseName = event.target.courseName.value;
       var currentDapartmentName = event.target.currentDapartmentName.value;
-
-        // console.log(collegeId,courseName,currentDapartmentName)
+       courseName = titleCase(courseName)
+      console.log(collegeId,courseName,currentDapartmentName)
       if(isNotEmpty(courseName))
-       
-      {
-           
- 
-                        
-      Meteor.call('addCourse',collegeId, courseName, currentDapartmentName)    
-               
-              event.target.courseName.value ="";
-                   
-              
-               
-         } else {
-              Bert.alert("Error Occured", "danger", "growl-top-right")
-                
-         }
-                        
-         return false;
-       
-  } 
-});
 
+      {
+
+
+
+      Meteor.call('addCourse',collegeId, courseName, currentDapartmentName, function(error){
+
+              event.target.courseName.value ="";
+
+
+          if (error){
+              Bert.alert("This module already exists for this College!", "danger", "growl-top-right")
+
+          } else {
+
+              Bert.alert("Course Was Added Successfully!", "success", "growl-top-right")
+              event.target.courseYear.value ="1";
+          }
+      })
+
+} else {
+    Bert.alert("Error Occured", "danger", "growl-top-right")
+
+}
+
+return false;
+
+}});
 
 
 

@@ -28,12 +28,3 @@ Template.commentForm.events({
     },
     
 })
-
-//validation rules
-var isNotEmpty = function(val){
-    if(val && val !== ''){
-        return true;
-    }
-    Bert.alert("Please fill in all fields", "danger", "growl-top-right")
-    return false;
-}
