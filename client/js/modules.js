@@ -30,7 +30,7 @@ Template.modules.events({
       var currentCourseId = event.target.currentCourseName.value;
       var modulename = event.target.modulename.value;
       var currentCourseYear = event.target.currentCourseYear.value;
-
+      var sluggedModuleName = slugify(modulename)
 
       console.log(currentCourseYear,currentCourseId,modulename)
       if(isNotEmpty(modulename))
@@ -39,7 +39,7 @@ Template.modules.events({
            
  
                         
-      Meteor.call('addCourseModules',currentCourseYear, currentCourseId, modulename, function(error){
+      Meteor.call('addCourseModules',currentCourseYear,sluggedModuleName, currentCourseId, modulename, function(error){
             
 
         if (error){

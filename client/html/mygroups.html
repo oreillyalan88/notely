@@ -1,55 +1,38 @@
 <template name="mygroups">
-                <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card-style">
-                        <div class="media">
 
-                            <div class="media-left">
-                                <img class="media-object img-thumbnail card-img" src="https://bootdey.com/img/Content/user_1.jpg">
-                            </div>
+    {{#each modules}}
 
-                            <div class="media-body">
-                                <a href="#"><h5 class="media-heading">Disc. Programação Internet Rica - 2016.2</h5></a>
-                                <div class="members pull-left"><small>1.235 Members</small></div><div class="btn btn-sm btn-danger pull-right btn-part">Join Group</div>
-                            </div>
-                        </div>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card-style">
+                <div class="media">
+
+                    <div class="media-left">
+                        <img class="media-object img-thumbnail card-img" src="{{logo}}">
                     </div>
+
+                    <form class="media-body">
+                        <h5 class="media-heading">{{moduleName}}</h5>
+                        <div class="members pull-left"><small>{{membersCount approved}} Members</small></div>
+
+
+                        {{#if isInRole (reject_id)}}
+                        <div class="btn btn-sm btn-static btn-warning pull-right btn-part disabled">&nbsp;&nbsp;Denied&nbsp;&nbsp;</div>
+                        {{else}}
+                        {{#if isInRole (_id)}}
+                        <a href="/mygroups/{{_id}}/posts"><div class="btn btn-sm btn-danger pull-right btn-part">View Posts</div></a>
+                        {{else}}
+                        <button class="btn btn-sm btn-success pull-right btn-part" id="sub">Subscribe</button>
+                        {{/if}}
+                        {{/if}}
+                    </form>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card-style">
-                        <div class="media">
+        </div>
+    </div>
+    {{else}}
+    <h1>You have not joined any 'Modules' yet - Use the search feature to find your class group</h1>
 
-                            <div class="media-left">
-                                <img class="media-object img-thumbnail card-img" src="https://lorempixel.com/300/300/technics/1/">
-                            </div>
-
-                            <div class="media-body">
-                                <a href="#"><h5 class="media-heading">Disc. Programação Internet Rica - 2016.2</h5></a>
-                                <div class="members pull-left"><small>1.235 Members</small></div><div class="btn btn-sm btn-danger pull-right btn-part">Join Group</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-             <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card-style">
-                        <div class="media">
-
-                            <div class="media-left">
-                                <img class="media-object img-thumbnail card-img" src="https://goo.gl/Xfk2oe">
-                            </div>
-
-                            <div class="media-body">
-                                <a href="#"><h5 class="media-heading">Disc. Programação Internet Rica - 2016.2</h5></a>
-                                <div class="members pull-left"><small>1.235 Members</small></div><div class="btn btn-sm btn-danger pull-right btn-part">Join Group</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    {{/each}}
 </template>

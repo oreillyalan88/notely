@@ -6,23 +6,25 @@
         <!--<a class ="company-logo" href="#">Note.ly</a>-->
             <div class="sidebar-links">
                 {{#if currentUser}}
-                {{#with userImages}}
+                    {{#with userImages}}
                 <img src="{{image}}" class="profileImage-icon">
-                {{else}}
+                         {{else}}
                 <img src="github.svg" class="profileImage-icon">
-                {{/with}}
+                    {{/with}}
                 <a class="link-red" href="/profile" id="profile-link"><i class="fa fa-user"></i>Profile</a>
-                <a class="link-blue" href="/posts" id="posts-link"><i class="fa fa-comments-o"></i>Posts</a>
+                <!--<a class="link-blue" href="/posts" id="posts-link"><i class="fa fa-comments-o"></i>Posts</a>-->
                 <a class="link-yellow" href="/rankings" id="rankings-link"><i class="fa fa-trophy"></i>Rankings</a>
                 <a class="link-green" href="/search" id="search-link"><i class="fa fa-search"></i>Search</a>
-                <a class="" href="/mygroups" id="mygroups-link"><i class="fa fa-sitemap"></i>Groups</a>
+
+                <a class="" href="/mygroups" id="mygroups-link"><i class="fa fa-comments-o"></i>Groups</a>
+
                 <!--<a class="" href="groups/schools" id="schools-link"><i class="fa fa-school"></i>Schools</a>-->
 
-                {{#if isInRole 'admin'}}
+                            {{#if isInRole 'admin'}}
                 <a class="" href="/admin" id="admin-link"><i class="fa fa-unlock-alt"></i>&nbsp;Admin</a>
-                {{/if}}
+                            {{/if}}
 
-               {{else}}
+                {{else}}
                  {{/if}}
                 {{#if currentUser}}
                 <a class="link-purple logout" href="#" id="logout-link"><i class="fa fa-sign-out"></i>Log Out</a>
@@ -31,7 +33,7 @@
                 {{/if}}
             </div>
     </aside>
-       
 
-  
+
+
 </template>

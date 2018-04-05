@@ -10,9 +10,9 @@ Template.posts.rendered = function() {
 
 Template.posts.helpers({
 
-    posts: function () {
-        return Posts.find({},{sort: {createdAt:-1}})
-    }
+    // posts: function () {
+    //     return Posts.find({},{sort: {createdAt:-1}})
+    // }
 })
 
 Template.posts.events({

@@ -7,8 +7,8 @@
             <form class="form-post">
           <h2 class ="postForm-heading">What's New</h2>
 
-
-            <textarea name="postInput" id="postInput" class="form-control" maxlength="6000"
+                <textarea name="hide" value="{{moduleId}}" id="moduleId"  style="display:none;"></textarea>
+                <textarea name="postInput" id="postInput" class="form-control" maxlength="6000"
             placeholder="What's on your mind?"></textarea>
                 {{#each theTemps}}
                 <ul class="uploads" style="list-style-type: none;" >
@@ -36,15 +36,15 @@
        </form>
 
        </div>
-    <table border="1">
-        <tbody>
-        {{#each theFiles}}
-        <tr>
-            <td>{{livestamp uploadedAt}}</td><td>{{original.name}}</td><td><a href="{{url}}">link</a></td><td>{{#if isUploaded}}uploaded{{else}}uploading...{{/if}}</td><td><button id="deleteRealFileButton">delete {{change}}</button></td>
-        </tr>
-        {{/each}}
-        </tbody>
-    </table>
+    <!--<table border="1">-->
+        <!--<tbody>-->
+        <!--{{#each theFiles}}-->
+        <!--<tr>-->
+            <!--<td>{{livestamp uploadedAt}}</td><td>{{original.name}}</td><td><a href="{{url}}">link</a></td><td>{{#if isUploaded}}uploaded{{else}}uploading...{{/if}}</td><td><button id="deleteRealFileButton">delete {{change}}</button></td>-->
+        <!--</tr>-->
+        <!--{{/each}}-->
+        <!--</tbody>-->
+    <!--</table>-->
     <!-- End Post Form-->
 
     {{else}}

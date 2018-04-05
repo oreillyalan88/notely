@@ -11,3 +11,25 @@ Template.mygroups.rendered = function(){
   
     
 }
+
+
+Template.mygroups.helpers({
+
+
+    modules: function () {
+
+        let currentUser =  Meteor.users.findOne({ _id: Meteor.userId() }).username
+
+        console.log(currentUser)
+
+        return Module.find( { 'approved.name': { $lte: currentUser } } )
+    },
+
+    membersCount : function(members){
+        return  (members.length || 0);
+    }
+
+
+})
+
+

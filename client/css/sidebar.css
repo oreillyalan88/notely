@@ -136,6 +136,11 @@
 .sidebar-left .sidebar-links a.link-purple i.fa {
   color: #915ba2;
 }
+.dropdown-container {
+  display: none;
+  padding-left: 8px;
+}
+
 
 /* Making the sidebar responsive */
 @media (max-width: 900px) {

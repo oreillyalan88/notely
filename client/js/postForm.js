@@ -4,7 +4,7 @@ Template.postForm.rendered = function(){
 Template.postForm.events({
     "submit .form-post":function(event){
         var postInput = event.target.postInput.value;
-        // var postSubject = event.target.postSubject.value;
+        var moduleId = event.target.moduleId.value;
         console.log(postInput)
 
         if(postInput.length === 0){
@@ -14,7 +14,7 @@ Template.postForm.events({
         }
         if(isNotEmpty(postInput)){
                    
-              Meteor.call('addPosts', postInput)
+              Meteor.call('addPosts', postInput,moduleId)
                
               // event.target.postSubject.value ="";
               event.target.postInput.value ="";
@@ -82,13 +82,7 @@ Template.postForm.events({
 })
 
 Template.postForm.helpers({
-  get_data: function() {
 
-
-      var slug= Template.parentData()
-      console.log(slug)
-      return  slug
-  },
 
     theFiles: function () {
         return FileCollection.find();
