@@ -34,25 +34,37 @@ Template.edit_profile.helpers({
 });
 
 Template.edit_profile.events({
-    "submit #update_profile": function() {
+    "submit.update_profile": function(event) {
 
-        var username = trimInput(event.target.username.value);
-        var email = trimInput(event.target.email.value);
-        var password = trimInput(event.target.password.value);
+        // console.log('memememe')
+        var current = trimInput(event.target.current.value)
+        var password = trimInput(event.target.newpassword.value);
         var password2 = trimInput(event.target.password2.value);
+        console.log("c"+current,"p"+password,"p2"+password2)
 
-        if (isNotEmpty(email)
-            && isNotEmpty(username)
+        if (
+             isNotEmpty(current)
+             &&
+            isValidPassword(current)
             && isNotEmpty(password)
-            && isEmail(email)
-            && areValidPasswords(password, password2)) {
+            && isNotEmpty(password2)
+            && areValidPasswords(password, password2)
+        ) {
 
+            Accounts.changePassword(current, password, function(error) {
+                if (error) {
+                    Bert.alert("Your current password is incorrect!"+error, "danger", "growl-top-right")
+                } else {
+                    Bert.alert("Your password has been changed!", "success", "growl-top-right")
+                    event.target.current.value = "";
+                    event.target.newpassword.value = "";
+                    event.target.password2.value = "";
 
-            // Meteor.call("updateProfile", this._id)
-            // Bert.alert("Profile Updated", "success", "growl-top-right")
+                }
+            });
 
         }
-
+        return false;
     }
     
 })
