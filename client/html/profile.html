@@ -17,27 +17,48 @@
     {{#each userPosts}}
 
         <div class="post">
-        <div class="row">
-            <div class =".col-sm-6 .col-md-5 .col-lg-6" id="info">
-                <h1 class="post-title">{{postSubject}}</h1>
-                <p class="meta">Posted By: {{author}} On: {{date}}</p>
-            </div>
-                    
-            <p class="regular post-content">{{postInput}}</p>
-            <div class =".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-offset-0" id="vote">
-                <img src="up.png" class="rank" id="upvote">
-                <img src="down.png" class="rank" id="downvote">
-            </div>
-            <div class="row" id="score">
-                <h3 class="count white block">{{upScore}}</h3>
-                <h3 class="count white block">{{downScore}}</h3>
-            </div>
-            <button class="btn btn-sml btn-danger" id="delete-post">Delete Post</button>
+            <div class="row">
+                <div class="border-end">
+                    <div class =".col-sm-6 .col-md-5 .col-lg-6" id="info">
 
-        </div>
+                        <div class="post-heading">
+                            <div class="pull-left image">
+
+                                <img src="{{profilePic}}" class="img-circle avatar" alt="user profile image">
+
+                            </div>
+                            <div class="pull-left meta">
+                                <div class="title h5">
+                                    <a href="#"><b>{{author}}</b></a>
+                                    made a post.
+                                </div>
+                                <h6 class="text-muted time" >{{livestamp createdAt}}</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="regular post-content">{{postInput}}</p>
+
+                    {{#each upload in uploads}}
+                    <li class="regular-uploads" style="list-style-type: none;"><a href="{{upload.file}}" name="postUpload" id="postUpload" target="_blank">{{upload.name}}</a>
+                    </li>
+                    {{/each}}
+
+                    <div class =".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-offset-0" id="vote">
+                        <img src="/up.png" class="rank" id="upvote">
+                        <img src="/down.png" class="rank" id="downvote">
+                    </div>
+                    <div class="row" id="score">
+                        <h3 class="count white block">{{upScore}}</h3>
+                        <h3 class="count white block">{{downScore}}</h3>
+
+
+                    </div>
+                    <button class="btn btn-sml btn-danger pull-right" id="delete-post">Delete Post</button>
+                </div>
+            </div>
         
     </div>
-    
     {{else}}
     <h1>No Posts To Display</h1>
     {{/each}}

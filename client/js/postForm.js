@@ -5,7 +5,7 @@ Template.postForm.events({
     "submit .form-post":function(event){
         var postInput = event.target.postInput.value;
         var moduleId = event.target.moduleId.value;
-        console.log(postInput)
+        console.log(moduleId)
 
         if(postInput.length === 0){
             Bert.alert("Please fill in all fields", "danger", "growl-top-right")

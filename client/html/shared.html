@@ -2,13 +2,16 @@
 
     <div id="profile-wrap">
     {{#each theFiles}}
-    <table border="1">
+    <table class="uploads" border="4">
         <tbody>
-        {{#each theFile in theFiles}}
+
+
+        {{#each uploads}}
         <tr>
-            <td>{{theFile/uploadedAt}}</td><td>{{theFile.original.name}}</td><td><a href="{{url}}">link</a></td><td><button id="deleteFileButton">delete</button></td>
+            <td class="upload-name">&nbsp;&nbsp;{{name}}&nbsp;&nbsp;</td><td><a href="{{file}}" target="_blank">&nbsp;&nbsp;Download&nbsp;&nbsp;</a></td><td><button id="deleteRealFileButton">delete</button></td>
         </tr>
         {{/each}}
+
         </tbody>
     </table>
     {{else}}

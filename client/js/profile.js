@@ -31,9 +31,31 @@ Template.profile.helpers({
 
 Template.profile.events({
     "click #delete-post": function(){
-  
-        Meteor.call("removePost", this._id)
-        Bert.alert("Post Deleted", "success", "growl-top-right")
+
+        let id= this._id
+
+        swal({
+                title: "Are you sure?",
+                // text: "You will not be able to recover this file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+
+                    console.log(id)
+
+                    Meteor.call("removePost", id)
+                    Bert.alert("Post Deleted", "success", "growl-top-right")
+
+                }
+            });
+
 
     },
     
