@@ -43,7 +43,7 @@ Template.signup.events({
                         })
                         ,
               Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
-              Router.go("/posts")
+              Router.go("/profile")
           }
           
       });    

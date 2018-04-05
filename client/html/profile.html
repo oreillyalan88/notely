@@ -1,7 +1,7 @@
 <template name="profile">
-    
- 
 
+
+    {{#if currentUser}}
     <div id="nav">
         <ul class="nav nav-pills">
         <li data-template="picture" role="presentation" class="active"> <a  href="#" >Edit Picture<span class="sr-only">(current)</span></a> </li>
@@ -10,7 +10,7 @@
         <li data-template="following" role="presentation"> <a href="#">Connections</a> </li>
       </ul>
     </div>
-    {{#if currentUser}}
+
 
         {{> Template.dynamic template=tab}}
     <!-- end profile -->

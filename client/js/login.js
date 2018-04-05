@@ -1,8 +1,8 @@
 Tracker.autorun(function(){
-    // if(Meteor.userId()){
-    //     Router.go("/posts");
-    // }
-})
+    if(Meteor.userId()){
+        Router.go("/profile");
+    }
+});
 
 Template.login.helpers({
     getEmail() {
@@ -14,17 +14,18 @@ Template.login.helpers({
 
 
 Template.login.rendered = function(){
-    
 
-    
-    $("#login-link").addClass('selected')
-    $("#posts-link").removeClass('selected')
-    $("#search-link").removeClass('selected')
+
     $("#profile-link").removeClass('selected')
     $("#rankings-link").removeClass('selected')
-    
-    
-    
+    $("#search-link").removeClass('selected')
+    $("#mygroups-link").removeClass('selected')
+    $("#admin-link").removeClass('selected')
+    $("#login-link").addClass('selected')
+
+
+
+
 
 }
 

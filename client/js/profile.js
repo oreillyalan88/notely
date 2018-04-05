@@ -1,15 +1,28 @@
+
+
+
 Template.profile.onCreated( function() {
   this.currentTab = new ReactiveVar( "picture" );
 });
 
 Template.profile.rendered = function() {
-    
 
-    $("#profile-link").addClass('selected')
-    $("#posts-link").removeClass('selected')
-    $("#rankings-link").removeClass('selected')
-    $("#search-link").removeClass('selected')
-    $("#login-link").removeClass('selected')
+
+
+
+        $("#profile-link").addClass('selected')
+        $("#rankings-link").removeClass('selected')
+        $("#search-link").removeClass('selected')
+        $("#mygroups-link").removeClass('selected')
+        $("#admin-link").removeClass('selected')
+        $("#login-link").removeClass('selected')
+
+
+
+
+
+
+
     
 }
 

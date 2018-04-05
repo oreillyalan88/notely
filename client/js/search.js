@@ -1,12 +1,12 @@
 Template.search.rendered = function() {
-    
-    // $("#search-link").addClass('selected')
-    // $("#posts-link").removeClass('selected')
-    // $("#rankings-link").removeClass('selected')
-    // $("#profile-link").removeClass('selected')
-    // $("#login-link").removeClass('selected')
-    
-    
+
+
+    $("#profile-link").removeClass('selected')
+    $("#rankings-link").removeClass('selected')
+    $("#search-link").addClass('selected')
+    $("#mygroups-link").removeClass('selected')
+    $("#admin-link").removeClass('selected')
+    $("#login-link").removeClass('selected')
     
 }
 

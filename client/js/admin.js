@@ -1,6 +1,17 @@
 Template.admin.rendered = function() {
-    
-    
+
+
+
+    $("#profile-link").removeClass('selected')
+    $("#rankings-link").removeClass('selected')
+    $("#search-link").removeClass('selected')
+    $("#mygroups-link").removeClass('selected')
+    $("#admin-link").addClass('selected')
+    $("#login-link").removeClass('selected')
+
+
+
+
 }
 
 
