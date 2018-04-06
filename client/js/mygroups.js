@@ -22,7 +22,7 @@ Template.mygroups.helpers({
 
         console.log(currentUser)
 
-        return Module.find( { 'approved.name': { $lte: currentUser } } )
+        return Module.find( { 'approved.name': { $eq: currentUser } } )
     },
 
     membersCount : function(members){

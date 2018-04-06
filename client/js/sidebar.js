@@ -1,23 +1,5 @@
 
 
-Template.sidebar.helpers({
-
-
-
-
-
-    modules: function () {
-
-        let currentUser =  Meteor.users.findOne({ _id: Meteor.userId() }).username
-
-        console.log(currentUser)
-
-        return Module.find( { 'approved.name': { $lte: currentUser } } )
-    }
-
-
-})
-
 
 Template.sidebar.events({
     "click .logout": function(event){

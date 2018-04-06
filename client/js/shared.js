@@ -4,7 +4,7 @@ Template.shared.helpers({
     theFiles: function () {
         return Posts.find(
 
-            {'uploads.userId' : { $lte: Meteor.userId()}}
+            {'uploads.userId' : { $eq: Meteor.userId()}}
 
 
         ).fetch()}

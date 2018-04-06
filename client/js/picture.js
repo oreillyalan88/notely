@@ -1,13 +1,15 @@
 Template.picture.rendered = function() {
-    
 
-    
+    this.autorun(function(){
+        Template.currentData();
+    });
+
     // $("#profile-link").addClass('selected')
     // $("#posts-link").removeClass('selected')
     // $("#rankings-link").removeClass('selected')
     // $("#search-link").removeClass('selected')
     // $("#login-link").removeClass('selected')
-    
+
 }
 
 Template.picture.helpers({
@@ -64,6 +66,8 @@ Template.picture.helpers({
 Template.picture.events({
     
     "submit .edit-profile":function(event){
+        event.preventDefault();
+
         var file =$('#profileImage').get(0).files[0];
         console.log(file)
         if(file){
@@ -89,9 +93,9 @@ Template.picture.events({
                         ),
                         
                     Meteor.call("updateAllPostImages", temp_id, imageLocation)
-                        
-                        
-                    // document.location.reload(true);
+
+
+                    Router.go('/     ')
                     Bert.alert("Profile Image Update Succesfull!", "success", "growl-top-right")
                 }
             })          
