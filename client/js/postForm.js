@@ -57,7 +57,9 @@ Template.postForm.events({
             }
             FileCollection.insert(yourFile, function (err, result ){
                 console.log("callback for the insert, err: ", err);
-               var fileLocation = 'http://localhost:3000/cfs/files/FileCollection/'+result._id+'/'+result.original.name
+               // var fileLocation = 'http://localhost:3000/cfs/files/FileCollection/'+result._id+'/'+result.original.name
+                var fileLocation = 'https://notelly.herokuapp.com/cfs/files/FileCollection/'+result._id+'/'+result.original.name
+
 
                 if (!err) {
                     console.log("inserted without error");
