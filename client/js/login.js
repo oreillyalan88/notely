@@ -1,8 +1,9 @@
-Tracker.autorun(function(){
-    if(Meteor.userId()){
-        Router.go("/profile");
-    }
-});
+// Tracker.autorun(function(){
+//     if(Meteor.userId()){
+//
+//         Router.go("/profile");
+//     }
+// });
 
 Template.login.helpers({
     getEmail() {
@@ -45,7 +46,7 @@ Template.login.events({
                         return false;
                         
                     } else{
-                        Router.go('/profile')
+                        Router.go('profile')
                         Bert.alert("Your Are Now Logged In", "success", "growl-top-right")
                         
                     }
@@ -165,7 +166,7 @@ Template.login.events({
                     }
                     else {
                         Bert.alert("Account Created, You are now logged in", "success", "growl-top-right")
-                        Router.go("/posts")
+                        Router.go("/profile")
                     }
                 }
             }

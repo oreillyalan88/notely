@@ -1,6 +1,6 @@
 <template name="signup" xmlns:text-align="http://www.w3.org/1999/xhtml">
     {{#if currentUser}}
-        <h3 class="white">You are logged in. Return <a href="/profile"></a>Home</h3>
+        <h3 class="white">You are logged in. Return <a href="/{{currentUser.username}}/profile"></a>Home</h3>
     {{else}}
     <form class="form-signup" id=register-form>
         <h2 class="form-signin-heading">Create Account</h2>

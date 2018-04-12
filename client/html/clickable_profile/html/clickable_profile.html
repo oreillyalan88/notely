@@ -1,21 +1,21 @@
-<template name="profile">
+<template name="clickable_profile">
 
 
-    {{#if currentUser}}
+
     <div id="nav">
         <ul class="nav nav-pills">
-        <li data-template="picture" role="presentation" class="active"> <a  href="#" >Edit Picture<span class="sr-only">(current)</span></a> </li>
-        <li data-template="edit_profile" role="presentation"> <a  href="#">Edit Profile</a> </li>
-        <li data-template="shared" role="presentation"> <a  href="#">Shared Files</a> </li>
+        <li data-template="clickable_picture" role="presentation" class="active"> <a  href="#" >User Details<span class="sr-only">(current)</span></a> </li>
+        <!--<li data-template="edit_profile" role="presentation"> <a  href="#">Edit Profile</a> </li>-->
+        <li data-template="clickable_shared" role="presentation"> <a  href="#">Shared Files</a> </li>
         <li data-template="following" role="presentation"> <a href="#">Connections</a> </li>
       </ul>
     </div>
 
 
 
-        {{> Template.dynamic template=tab}}
+        {{> Template.dynamic template=tab }}
     <!-- end profile -->
-    {{#each userPosts}}
+    {{#each profileOwnerPosts}}
 
         <div class="post">
             <div class="row">
@@ -65,6 +65,7 @@
     <h1>No Posts To Display</h1>
     {{/each}}
 
+
 <!--js for switching file picker span -->
     
 <script type="text/javascript">
@@ -81,6 +82,6 @@
     
 <!-- close js for switching file picker span -->
   
-    
-{{/if}}
+
+
 </template>

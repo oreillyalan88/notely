@@ -1,0 +1,22 @@
+<template name="clickable_shared">
+
+    <div id="profile-wrap">
+    {{#each profileOwnerFiles}}
+    <table class="uploads" border="4">
+        <tbody>
+
+
+        {{#each uploads}}
+        <tr>
+            <td class="upload-name">&nbsp;&nbsp;{{name}}&nbsp;&nbsp;</td><td><a href="{{file}}" target="_blank">&nbsp;&nbsp;Download&nbsp;&nbsp;</a></td><td><button id="deleteRealFileButton">delete</button></td>
+        </tr>
+        {{/each}}
+
+        </tbody>
+    </table>
+    {{else}}
+    <h1>No files uploaded</h1>
+    {{/each}}
+    </div>
+
+</template>

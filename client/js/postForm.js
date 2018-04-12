@@ -19,10 +19,10 @@ Template.postForm.events({
               // event.target.postSubject.value ="";
               event.target.postInput.value ="";
                    
-              Bert.alert("Your Post Was Succesful!", "success", "growl-top-right")   
+              Bert.alert("Your Post Was Successful!", "success", "growl-top-right")
                
          } else {
-              Bert.alert("Error Occured", "danger", "growl-top-right")
+              Bert.alert("Error Occurred", "danger", "growl-top-right")
                 
          }
                         

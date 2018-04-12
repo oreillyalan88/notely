@@ -1,14 +1,8 @@
-
-
-
 Template.profile.onCreated( function() {
   this.currentTab = new ReactiveVar( "picture" );
 });
 
 Template.profile.rendered = function() {
-
-
-
 
         $("#profile-link").addClass('selected')
         $("#rankings-link").removeClass('selected')
@@ -18,12 +12,6 @@ Template.profile.rendered = function() {
         $("#login-link").removeClass('selected')
 
 
-
-
-
-
-
-    
 }
 
 Template.profile.helpers({
