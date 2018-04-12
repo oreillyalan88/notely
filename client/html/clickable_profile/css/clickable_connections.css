@@ -1,0 +1,24 @@
+.main-box-layout{
+    position: relative;
+    margin-bottom: 10px;
+}
+.facebook-box{
+    color:#4E69A2;
+    background-color: #3B5998;
+    font-size:95px;
+    height:100px;
+    /*overflow: hidden;*/
+    padding-left:3px;
+}
+.box-layout-text{
+    position: absolute;
+    top:15px;
+    color:#fff;
+    right:25px;
+    height: 100px;
+    /*overflow: hidden;*/
+}
+.box-layout-text h1{
+    font-size:30px;
+    margin: 0px;
+}
