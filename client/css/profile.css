@@ -94,7 +94,7 @@ label:hover {
 	
 }
 	 
-#nav li.active a{color: white; border-bottom: 2px solid #FD3A13 }
+#nav li.active a{color: white;   border-bottom: 2px solid #FD3A13 }
 
 .uploads .upload-name {
 	width:70%

@@ -1,24 +1,94 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
 .main-box-layout{
     position: relative;
     margin-bottom: 10px;
+    color:#fff;
 }
-.facebook-box{
+.box{
     color:#4E69A2;
     background-color: #3B5998;
+
     font-size:95px;
     height:100px;
-    /*overflow: hidden;*/
-    padding-left:3px;
+    overflow: hidden;
+    padding:25px 8px 8px 8px;
 }
 .box-layout-text{
     position: absolute;
-    top:15px;
+    top:12.5px;
     color:#fff;
     right:25px;
     height: 100px;
-    /*overflow: hidden;*/
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
 }
 .box-layout-text h1{
     font-size:30px;
     margin: 0px;
 }
+.box-layout-text .details {
+    display: block;
+}
+.social-links {
+    display: inline-block;
+}
+.followavatar {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+.ranks {
+
+    width: 30px;
+    /*padding-left: 10px;*/
+    padding-right: 10px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#votes {
+    padding: 5px;
+}
+
+#scores {
+    padding-left: 22px;
+    padding-right: 5px;
+
+}
+
+#nav-nested {
+    background-color: #fafaff;
+    text-align: center;
+    margin-top: -50px;
+
+}
+#nav-nested ul {
+    list-style: none;
+    display: inline-block;
+    margin:0 auto;
+    padding:0;
+}
+#nav-nested ul li {
+    float: left;
+    margin: 20px;
+
+
+}
+#nav-nested ul li a {
+    color: #141517;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
+#nav-nested li.active a{background-color: #337ab7; color: white; border-bottom: 2px solid #FD3A13 }
+
+

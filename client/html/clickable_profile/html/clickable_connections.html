@@ -3,17 +3,18 @@
     <!-- this is where the user profile starts -->
 
     <div id="profile-wrap">
+        <div id="nav-nested">
+            <ul class="nav nested-nav-pills">
 
+                <li data-template="clickable_followers" role="presentation" class="active"> <a  href="#" >Followers<span class="sr-only">(current)</span></a> </li>
+                <li data-template="clickable_following" role="presentation" > <a  href="#">Following </a></li>
+
+            </ul>
+        </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-4 col-12 main-box-layout">
-                    <div class="facebook-box rounded">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </div>
-                    <div class="box-layout-text text-right">
-                        <h1>31,153</h1>
-                        <span>Page Likes</span>
-                    </div>
-                </div>
+
+                {{> Template.dynamic template=tabs }}
+
 
 
             </div>

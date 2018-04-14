@@ -1,0 +1,26 @@
+<template name="clickable_followers">
+    {{#each thisProfilesFollowers}}
+    <div class="col-lg-4 col-sm-4 col-12 main-box-layout">
+    <div class="box rounded">
+
+        <div class="pull-left image">
+            <img src="{{thisFollowersProfilePic(username)}}" class="img-circle followavatar" alt="user profile image" >
+        </div>
+
+    </div>
+    <div class="box-layout-text text-right">
+        <span class="details">{{username}}</span><br>
+        <div class =row id="votes">
+            <img src="/up.png" class="ranks" id="upvote">
+            <img src="/down.png" class="ranks" id="downvote">
+        </div>
+        <div class="row" id="scores">
+            <h3 class="count white block">{{profile.upScore}}</h3>
+            <h3 class="count white block">{{profile.downScore}}</h3>
+        </div>
+    </div>
+</div>
+    {{else}}
+    <p>This User has no followers yet!</p>
+    {{/each}}
+</template>
