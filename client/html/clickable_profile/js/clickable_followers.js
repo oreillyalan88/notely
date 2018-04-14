@@ -15,9 +15,7 @@ Template.clickable_followers.helpers({
 
 
 Template.registerHelper('thisFollowersProfilePic', function(username) {
-    console.log(username)
     let mup= UserImages.findOne({username:username}).image
-    console.log(mup)
     return mup
     }
 )
