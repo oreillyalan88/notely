@@ -1,13 +1,15 @@
 <template name="clickable_following">
+
+
     {{#each whoThisProfilesFollows}}
-
     <div class="col-lg-4 col-sm-4 col-12 main-box-layout">
-    <div class="box rounded">
-        <div class="pull-left image">
-            <img src="{{thisConnectionsProfilePic(username)}}" class="img-circle followavatar" alt="user profile image" >
-        </div>
+        <div class="box rounded">
+                <div class="pull-left image">
 
-    </div>
+                        <img src="{{thisConnectionsProfilePic(username)}}" class="img-circle followavatar" alt="user profile image" id="default"  style="cursor:pointer">
+
+                </div>
+        </div>
     <div class="box-layout-text text-right">
         <span class="details">{{username}}</span><br>
         <div class =row id="votes">
@@ -19,7 +21,7 @@
             <h3 class="count white block">{{profile.downScore}}</h3>
         </div>
     </div>
-</div>
+    </div>
     {{else}}
     <p>This User follows nobody yet!</p>
     {{/each}}

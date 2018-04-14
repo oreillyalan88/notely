@@ -5,9 +5,7 @@ Template.clickable_connections.onCreated( function() {
 
 Template.clickable_connections.helpers({
 
-    tabs: function() {
-        return Template.instance().currentTab.get();
-    },
+
 
     thisProfilesFollowers: function(){
         const followers = this.profilesFollowers
@@ -19,6 +17,9 @@ Template.clickable_connections.helpers({
 
 
 });
+Template.registerHelper('tabs', function() {
+    return Template.instance().currentTab.get();
+}),
 
 Template.clickable_connections.events({
 
@@ -33,3 +34,4 @@ Template.clickable_connections.events({
 
 
 })
+
