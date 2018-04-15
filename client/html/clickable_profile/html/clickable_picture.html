@@ -6,15 +6,25 @@
         <center>
 
             <img src="{{profileOwnerImage}}" class="profile-img">
-
+            {{#if isCurrentUsersProfile}}
+            <p>Welcome Back </p>
+            {{else}}
                     <br>
-                    <button type="submit" id="follow" class="btn btn-sml btn-primary">
-                        &nbsp;&nbsp;Follow&nbsp;&nbsp;
-                    </button>
-                     <button type="submit"  id="unfollow" class="btn btn-sml btn-primary">
-                    &nbsp;Unfollow&nbsp;
-                     </button>
 
+
+
+                    {{#if doIFollow}}
+
+            <button type="submit"  id="unfollow" class="btn btn-sml btn-primary">
+                &nbsp;Unfollow&nbsp;
+            </button>
+                    {{else}}
+            <button type="submit" id="follow" class="btn btn-sml btn-primary">
+                &nbsp;&nbsp;Follow&nbsp;&nbsp;
+            </button>
+                    {{/if}}
+
+            {{/if}}
             <h1 class="username">{{profileOwner.username}}</h1>
                 <div class="" >
                     <img src="/up.png" class="profile-rank" id="upvote">

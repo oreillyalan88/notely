@@ -41,3 +41,37 @@ Template.clickable_picture.events({
 
 
 })
+
+Template.clickable_picture.helpers({
+
+    doIFollow: function(){
+
+        let follows = Meteor.users.find({
+                $and: [
+                    {_id: Meteor.userId()},
+                    {following:  this.profileOwner.username}
+                    ]
+        }).count()
+
+
+        if(follows==1){
+            return true
+        }
+
+    },
+
+    isCurrentUsersProfile: function(){
+        let currentUser = Meteor.users.findOne({username:  this.profileOwner.username}).username
+
+
+        if (currentUser == Meteor.user().username) {
+            console.log(currentUser)
+            console.log(Meteor.user().username)
+            return true
+        }
+    }
+
+
+
+
+})
