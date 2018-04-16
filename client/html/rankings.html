@@ -4,8 +4,10 @@
     <div id="profile-wrap">
         <center>
             <h1>Top Poster</h1>
-            <img src ="/github.svg" class="profile-img">
-            <h3>{{scoreLeader.username}}</h3>
+            <a href="/{{scoreLeader.username}}/profile">
+            <img src ="{{scoreLeaderProfilePic}}" class="profile-img"></a>
+            <a href="/{{scoreLeader.username}}/profile">
+            <h3>{{scoreLeader.username}}</h3></a>
             <div>
                 <img src="/up.png"  class="profile-rank" id="upvote">
             </div>
@@ -15,5 +17,22 @@
         </center>
     </div>
     <!--End  -->
+
+    <div id="profile-wrap">
+        <center>
+            <h1>Top Poster</h1>
+            <a href="/{{scoreLeader.username}}/profile">
+                <img src ="{{scoreLeaderProfilePic}}" class="profile-img"></a>
+            <a href="/{{scoreLeader.username}}/profile">
+                <h3>{{scoreLeader.username}}</h3></a>
+            <div>
+                <img src="/up.png"  class="profile-rank" id="upvote">
+            </div>
+            <div class="score" id="">
+                <h3 class="count black block">{{scoreLeader.profile.upScore}}</h3>
+            </div>
+        </center>
+    </div>
+
 {{/if}}
 </template>

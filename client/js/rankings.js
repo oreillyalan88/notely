@@ -15,6 +15,21 @@ Template.rankings.helpers({
     scoreLeader: function(){
         var scoreLeader = Meteor.users.findOne({},{sort: {'profile.upScore': -1}}); //user with must upvotes
         return scoreLeader;
+    },
+
+    scoreLeaderProfilePic: function (){
+        var scoreLeader = Meteor.users.findOne({},{sort: {'profile.upScore': -1}}); //user with must upvotes
+
+        var profilePic = UserImages.findOne({userId:scoreLeader._id}).image
+        console.log(profilePic)
+        return profilePic;
+
+    },
+
+    topSharer: function (){
+
+        var scoreLeader = Meteor.users.findOne({},{sort: {'profile.upScore': -1}}); //user with must upvotes
+        return scoreLeader;
     }
 })
     
