@@ -14,7 +14,18 @@ Template.rankings.rendered = function() {
 Template.rankings.helpers({
     scoreLeader: function(){
         var scoreLeader = Meteor.users.findOne({},{sort: {'profile.upScore': -1}}); //user with must upvotes
-        return scoreLeader;
+
+
+        if(scoreLeader.profile.upScore==0)
+        {
+            return false
+            console.log('didntwork')
+        }
+        else {
+            return scoreLeader;
+            console.log("worked!")
+
+        }
     },
 
     scoreLeaderProfilePic: function (){
@@ -28,8 +39,27 @@ Template.rankings.helpers({
 
     topSharer: function (){
 
-        var scoreLeader = Meteor.users.findOne({},{sort: {'profile.upScore': -1}}); //user with must upvotes
-        return scoreLeader;
+        var shareLeader = Meteor.users.findOne({},{sort: {'uploads.uploadScore': -1}}); //user with must uploads
+
+        if(shareLeader.uploads.uploadScore==0)
+        {
+            return false
+            console.log('didntwork')
+        }
+        else {
+            return shareLeader;
+            console.log("worked!")
+
+        }
+    },
+
+    topSharerProfilePic: function (){
+        var shareLeader = Meteor.users.findOne({},{sort: {'uploads.uploadScore': -1}}); //user with must uploads
+
+        var profilePic = UserImages.findOne({userId:shareLeader._id}).image
+        console.log(profilePic)
+        return profilePic;
+
     }
 })
     

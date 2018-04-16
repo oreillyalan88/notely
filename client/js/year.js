@@ -53,10 +53,7 @@ Template.years.events({
         }
       })   
        
-  } else {
-              Bert.alert("Error Occured", "danger", "growl-top-right")
-                
-         }
+  }
                         
          return false;
 

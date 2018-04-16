@@ -29,17 +29,18 @@ Template.modules.events({
       
       var currentCourseId = event.target.currentCourseName.value;
       var modulename = event.target.modulename.value;
+      var moduleLogo = event.target.moduleLogo.value;
       var currentCourseYear = event.target.currentCourseYear.value;
       var sluggedModuleName = slugify(modulename)
 
-      console.log(currentCourseYear,currentCourseId,modulename)
-      if(isNotEmpty(modulename))
+      console.log(currentCourseYear,currentCourseId,modulename, moduleLogo)
+      if(isNotEmpty(modulename) && isNotEmpty(moduleLogo))
        
       {
            
  
                         
-      Meteor.call('addCourseModules',currentCourseYear,sluggedModuleName, currentCourseId, modulename, function(error){
+      Meteor.call('addCourseModules',currentCourseYear,sluggedModuleName, currentCourseId, modulename, moduleLogo,function(error){
             
 
         if (error){
@@ -52,10 +53,7 @@ Template.modules.events({
         }
       }.bind(this));
        
-  } else {
-              Bert.alert("Error Occured", "danger", "growl-top-right")
-                
-         }
+  }
                         
          return false;
 
@@ -80,7 +78,38 @@ Template.modules.events({
             Bert.alert("You request is under review", "success", "growl-top-right");
         }
              return false;
-}
+},
+    'change .your-upload-class': function (event, template) {
+        event.preventDefault();
+        console.log("uploading...")
+        FS.Utility.eachFile(event, function (file) {
+            console.log("each file...");
+            var yourFile = new FS.File(file);
+            yourFile.metadata = {
+                fileOwner: Meteor.userId()
+            }
+            FileCollection.insert(yourFile, function (err, result ){
+                console.log("callback for the insert, err: ", err);
+                var fileLocation = 'http://localhost:3000/cfs/files/FileCollection/'+result._id
+
+                if (!err) {
+                    console.log("inserted without error");
+                    $("#moduleLogo").val(fileLocation)
+                    $("#this-logo").replaceWith($("#this-logo").val('').clone(true));
+
+                    // TempPostCollection.insert({upload_id: result._id,userId: Meteor.userId(), file: fileLocation , name:result.original.name })
+                    //
+
+
+
+
+                }
+                else {
+                    console.log("there was an error", err);
+                }
+            });
+        });
+    }
     
 });
 

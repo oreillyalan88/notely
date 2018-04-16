@@ -7,11 +7,6 @@ Template.postForm.events({
         var moduleId = event.target.moduleId.value;
         console.log(moduleId)
 
-        if(postInput.length === 0){
-            Bert.alert("Please fill in all fields", "danger", "growl-top-right")
-            return false;
-
-        }
         if(isNotEmpty(postInput)){
                    
               Meteor.call('addPosts', postInput,moduleId)
@@ -21,9 +16,6 @@ Template.postForm.events({
                    
               Bert.alert("Your Post Was Successful!", "success", "growl-top-right")
                
-         } else {
-              Bert.alert("Error Occurred", "danger", "growl-top-right")
-                
          }
                         
          return false;
@@ -46,7 +38,7 @@ Template.postForm.events({
         Meteor.call('deletePostByUpload',id)
     },
 
-    'change .your-upload-class': function (event, template) {
+    'change .input-group-addon': function (event, template) {
         event.preventDefault();
         console.log("uploading...")
         FS.Utility.eachFile(event, function (file) {

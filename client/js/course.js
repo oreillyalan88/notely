@@ -24,43 +24,81 @@ Template.course.helpers({
 })
 
 Template.course.events({
-   "submit .course-register": function(event){
+   "submit .course-register": function(event, err){
 
 
       var collegeId = event.target.currentcollegeId.value;
       var courseName = event.target.courseName.value;
+      var courseLogo = event.target.courseLogo.value;
       var currentDapartmentName = event.target.currentDapartmentName.value;
        courseName = titleCase(courseName)
-      console.log(collegeId,courseName,currentDapartmentName)
-      if(isNotEmpty(courseName))
+      console.log(collegeId,courseName,currentDapartmentName,courseLogo)
 
-      {
-
+       if(isNotEmpty(courseLogo)&&isNotEmpty(courseName)){
 
 
-      Meteor.call('addCourse',collegeId, courseName, currentDapartmentName, function(error){
 
-              event.target.courseName.value ="";
+      Meteor.call('addCourse',collegeId, courseName,courseLogo, currentDapartmentName, function(error){
+
 
 
           if (error){
               Bert.alert("This module already exists for this College!", "danger", "growl-top-right")
 
+              event.target.courseName.value ="";
+              event.target.courseLogo.value ="";
+
           } else {
 
               Bert.alert("Course Was Added Successfully!", "success", "growl-top-right")
-              event.target.courseYear.value ="1";
+
+              event.target.courseName.value ="";
+              event.target.courseLogo.value ="";
           }
       })
 
-} else {
-    Bert.alert("Error Occured", "danger", "growl-top-right")
-
 }
+
 
 return false;
 
-}});
+},
+
+
+    'change .your-upload-class': function (event, template) {
+        event.preventDefault();
+        console.log("uploading...")
+        FS.Utility.eachFile(event, function (file) {
+            console.log("each file...");
+            var yourFile = new FS.File(file);
+            yourFile.metadata = {
+                fileOwner: Meteor.userId()
+            }
+            FileCollection.insert(yourFile, function (err, result ){
+                console.log("callback for the insert, err: ", err);
+                var fileLocation = 'http://localhost:3000/cfs/files/FileCollection/'+result._id
+
+                if (!err) {
+                    console.log("inserted without error");
+                    $("#courseLogo").val(fileLocation)
+                    $("#this-logo").replaceWith($("#this-logo").val('').clone(true));
+
+                    // TempPostCollection.insert({upload_id: result._id,userId: Meteor.userId(), file: fileLocation , name:result.original.name })
+                //
+
+
+
+
+                }
+                else {
+                    console.log("there was an error", err);
+                }
+            });
+        });
+    }
+
+
+});
 
 
 

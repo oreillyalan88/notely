@@ -3,7 +3,7 @@
     <!--User With Highest UpVote -->
     <div id="profile-wrap">
         <center>
-            <h1>Top Poster</h1>
+            <h1>Most Liked</h1>
             <a href="/{{scoreLeader.username}}/profile">
             <img src ="{{scoreLeaderProfilePic}}" class="profile-img"></a>
             <a href="/{{scoreLeader.username}}/profile">
@@ -17,22 +17,22 @@
         </center>
     </div>
     <!--End  -->
-
+    {{#if topSharer}}
     <div id="profile-wrap">
         <center>
-            <h1>Top Poster</h1>
-            <a href="/{{scoreLeader.username}}/profile">
-                <img src ="{{scoreLeaderProfilePic}}" class="profile-img"></a>
-            <a href="/{{scoreLeader.username}}/profile">
-                <h3>{{scoreLeader.username}}</h3></a>
+            <h1>Top Uploader</h1>
+            <a href="/{{topSharer.username}}/profile">
+                <img src ="{{topSharerProfilePic}}" class="profile-img"></a>
+            <a href="/{{topSharer.username}}/profile">
+                <h3>{{topSharer.username}}</h3></a>
             <div>
-                <img src="/up.png"  class="profile-rank" id="upvote">
+                <img src="/upload.png"  class="profile-rank" id="upvote">
             </div>
             <div class="score" id="">
-                <h3 class="count black block">{{scoreLeader.profile.upScore}}</h3>
+                <h3 class="count black block">{{topSharer.uploads.uploadScore}}</h3>
             </div>
         </center>
     </div>
-
+    {{/if}}
 {{/if}}
 </template>

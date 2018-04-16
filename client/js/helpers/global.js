@@ -39,7 +39,7 @@ trimInput = function(val){
     return val.replace(/^\s*|\s*$/g, "") //if these values are found, replace with empty string
 }
 
- isNotEmpty = function(val){
+isNotEmpty = function(val){
     if(val && val !== ''){
         return true;
     }
@@ -48,7 +48,7 @@ trimInput = function(val){
 }
 
 //validate email
- isEmail = function(val){
+isEmail = function(val){
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if(filter.test(val)){
         return true;
@@ -58,7 +58,7 @@ trimInput = function(val){
 }
 
 //check password field
- isValidPassword = function(password){
+isValidPassword = function(password){
     if(password.length<6){
         Bert.alert("Password must be at least 6 characthers", "danger",  "growl-top-right")
         return false;
@@ -68,7 +68,7 @@ trimInput = function(val){
 
 //check password match
 
- areValidPasswords = function(password, confirm){
+areValidPasswords = function(password, confirm){
     if(!isValidPassword(password)){
         return false
     }
@@ -81,12 +81,12 @@ trimInput = function(val){
     return true;
 }
 
- checkIfUserExists= function (username) {
+checkIfUserExists= function (username) {
     return (Meteor.users.findOne({username: username})) ? true : false;
 }
 
 
- makeId = function() {
+makeId = function() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
