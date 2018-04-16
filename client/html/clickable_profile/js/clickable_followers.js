@@ -1,11 +1,19 @@
 Template.clickable_followers.helpers({
 
     thisProfilesFollowers: function(){
-        console.log(this.profilesFollowers)
         const followers = this.profilesFollowers
 
-        return Meteor.users.find({username: {$in: followers}});
+        if (followers!=undefined) {
+            return Meteor.users.find({username: {$in: followers}});
 
+        }
+
+        else {
+            let myFollowers = Meteor.users.findOne({_id: Meteor.userId()} ).follower
+            return Meteor.users.find({username: {$in: myFollowers}});
+
+
+        }
 
     }
 

@@ -3,8 +3,16 @@ Template.clickable_following.helpers({
     whoThisProfilesFollows: function(){
         const following = this.whoProfilesFollows
 
-        return Meteor.users.find({username: {$in: following}});
+        if(following!=undefined)
+        {
+            return Meteor.users.find({username: {$in: following}});
+        }
 
+        else{
+            let whoIFollow = Meteor.users.findOne({_id: Meteor.userId()} ).following
+            return Meteor.users.find({username: {$in: whoIFollow}});
+
+        }
 
     }  ,
 
