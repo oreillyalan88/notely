@@ -34,7 +34,7 @@ Template.course.events({
        courseName = titleCase(courseName)
       console.log(collegeId,courseName,currentDapartmentName,courseLogo)
 
-       if(isNotEmpty(courseLogo)&&isNotEmpty(courseName)){
+       if(isNotEmpty(courseLogo) && isNotEmpty(courseLogo)){
 
 
 

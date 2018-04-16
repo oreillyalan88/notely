@@ -51,7 +51,7 @@ Template.picture.helpers({
     userImages: function(){
         var username = Meteor.user().username
         var userId = Meteor.userId();
-        var URL = UserImages.findOne({username: username}, {userId: userId})
+        var URL = UserImages.findOne({username: username}, {userId: userId}).image
         return URL
     }
     
@@ -59,48 +59,71 @@ Template.picture.helpers({
 });
 
 Template.picture.events({
-    
-    "submit .edit-profile":function(event){
+
+
+    'change .your-upload-class': function(event) {
         event.preventDefault();
 
-        var file =$('#profileImage').get(0).files[0];
-        console.log(file)
-        if(file){
-            
-            fsFile = new FS.File(file);
-            
-            ProfileImages.insert(fsFile, function(err, result){
-                if(err){
-                    throw new Meteor.Error(err);
-                }else{
-                    var imageLocation = '/cfs/files/ProfileImages/'+result._id
-                    var temp_id = Meteor.userId()
-                    var tempImageId=UserImages.findOne({userId:temp_id},{userId: 0,username:0,image:0})
-                    
-                    // console.log(temp_id)
-                    // console.log(imageLocation)
-                      UserImages.update(
-                          {_id: tempImageId._id},
-                          {$set: {
-                            image: imageLocation
-                            }
-                          }
-                        ),
-                        
-                    Meteor.call("updateAllPostImages", temp_id, imageLocation)
+        FS.Utility.eachFile(event, function(file) {
+
+            var newFile = new FS.File(file);
+            console.log(newFile)
+            newFile.metadata = {
+                createdBy:Meteor.userId(),
+            }
+
+            ProfileImages.insert(newFile, function (err, fileObj) {
+
+                if (err){
+                    // handle error
+                } else {
+
+                    var currentUserId = Meteor.userId();
+                    var intervalHandle = Meteor.setInterval(function () {
+                        console.log("Inside interval");
+
+                        // changes here:
 
 
-                    Router.go('/     ')
-                    Bert.alert("Profile Image Update Succesfull!", "success", "growl-top-right")
+                        if (fileObj.hasStored("profileImages")) {
+                            //checked if image was stored
+
+                            console.log('here'+ currentUserId)
+                            var imagesURL = '/cfs/files/ProfileImages/' + fileObj._id + '/' + fileObj.name()
+                            var tempImageId = UserImages.findOne({
+                                userId:currentUserId
+                            })
+
+                            UserImages.update(
+                                {_id: tempImageId._id},
+                                {
+                                    $set: {
+                                        image: imagesURL
+                                    }
+                                }
+                            );
+                            Meteor.call("updateAllPostImages", currentUserId, imagesURL)
+                            Bert.alert("Profile Image Update Successful!", "success", "growl-top-right")
+                            // // if file has stored, stop interval
+                            Meteor.clearInterval(intervalHandle);
+                        }
+                    }, 1);
+
                 }
-            })          
-            
-            
-        }
-        
-        return false //prevent form submit
+
+
+
+            });
+
+        });
     }
-    
-    
-    
-})
+
+
+
+
+
+        })
+
+
+
+

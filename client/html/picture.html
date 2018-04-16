@@ -3,18 +3,15 @@
     <!-- this is where the user profile starts -->
     <div id="profile-wrap">
         <center>
-            {{#with userImages}}
-            <img src="{{image}}" class="profile-img">
-            <form class="edit-profile" enctype="multipart/form-data">
-                    <label for="profileImage">Choose Profile Image</label>
-                    <span id="filename"></span>
-                    <input type="file" name="profileImage" id="profileImage" class="black profileImage">
-                    <br>
-                    <button type="submit" value="Upload Photo" id="profile-btn" class="btn btn-sml btn-primary">
-                        Upload Photo
-                    </button>
-            </form>
-            {{/with}}
+
+            <img src="{{userImages}}" class="profile-img">
+            <div class="image-upload">
+                <label class = "btn btn-info pointer" for="this-logo"  >
+                   Change Profile Picture <i class="fa fa-upload fa" aria-hidden="true"></i>
+                </label>
+               <input class="your-upload-class" id="this-logo"  type="file"/>
+            </div>
+
             <h1 class="username">{{username}}</h1>
                 <div class="" >
                     <img src="/up.png" class="profile-rank" id="upvote">
