@@ -54,23 +54,34 @@
         {{#if selected}}
         <div class="postInfo">
             <div>
-                <a href="/{{username}}/profile"><span class="">Username: {{username}}</span></a>
+                <a href="/{{username}}/profile"><span class="">Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{username}}</span></a>
             </div>
         <br>
             <div>
-               <span class="">Email: {{emails.[0].address}}</span>
+               <span class="">Email:
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;
+                   {{emails.[0].address}}</span>
             </div>
         <br>
         <div>
-            <span class="">Up Votes: {{profile.upScore}}</span>
+            <span class="">Up Votes:
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;
+
+                {{profile.upScore}}</span>
         </div>
         <br>
         <div>
-            <span class="">Down Votes: {{profile.downScore}}</span>
+            <span class="">Down Votes:&nbsp;&nbsp;&nbsp; {{profile.downScore}}</span>
         </div>
         <br>
         <div>
-            <span class="">Uploads: {{uploads.uploadScore}}</span>
+            <span class="">Uploads:
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
+                 {{uploads.uploadScore}}</span>
         </div>
         </div>
         {{/if}}

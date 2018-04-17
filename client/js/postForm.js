@@ -23,10 +23,13 @@ Template.postForm.events({
         
     },
 
-    'click #deleteTempFileButton ': function ( event) {
+    'click #deleteFileButton ': function ( event) {
         event.preventDefault();
         console.log("deleteFile button ", this);
         Meteor.call('removeTempUpload', this.upload_id);
+        FileCollection.remove({_id: this.upload_id});
+
+
     },
 
     'click #deleteRealFileButton ': function ( event) {
@@ -34,11 +37,10 @@ Template.postForm.events({
         console.log("deleteFile button ", this);
         var id= this._id
         console.log(id)
-        FileCollection.remove({_id: this._id});
         Meteor.call('deletePostByUpload',id)
     },
 
-    'change .input-group-addon': function (event, template) {
+    'change .your-upload-class': function (event, template) {
         event.preventDefault();
         console.log("uploading...")
         FS.Utility.eachFile(event, function (file) {
@@ -78,12 +80,22 @@ Template.postForm.events({
 Template.postForm.helpers({
 
 
+    theCurrentUser:function(){
+       var uploads = TempPostCollection.find({userId: Meteor.userId()}).fetch();
+       if(uploads==undefined || uploads.length<1){
+           return false
+       }
+       else{
+           return true
+       }
+    },
+
     theFiles: function () {
         return FileCollection.find();
     },
 
     theTemps: function () {
-        return TempPostCollection.find();
+        return TempPostCollection.find({userId: Meteor.userId()}).fetch();
     }
   
 })
