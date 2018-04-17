@@ -47,3 +47,6 @@ fourseven:scss
 nourharidy:ssl
 kevohagan:sweetalert
 aldeed:template-extension
+easy:search
+easysearch:elasticsearch
+easysearch:autosuggest
