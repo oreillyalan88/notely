@@ -15,7 +15,17 @@
                                             <h5 class="time">{{livestamp createdAt}}</h5>
                                         </div>
                                         <br>
-                                       <p>{{commentInput}}</p>
+                                        {{#if postOwner}}
+                                        <button id="deleteCommentButton" data-toggle="tooltip" title="Delete Comment" type="button" class="close" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span></button>
+                                        {{else}}
+                                            {{#if isInRole 'admin'}}
+                                            <button id="adminDeleteCommentButton" data-toggle="tooltip" title="Delete Comment" type="button" class="close" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span></button>
+                                            {{/if}}
+                                        {{/if}}
+                                        <p>{{commentInput}}</p>
+
                                     </div>
           
                                 </li>
