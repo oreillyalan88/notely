@@ -11,6 +11,7 @@
 	background-color: #fafaff;
 	padding: 10px 20px;
 	margin-bottom: 25px;
+	margin-top: 10px;
 	border: 1px solid #ececec;
 	box-shadow: 0 0 5px #8c8c8c;
 	color: #444;
@@ -92,7 +93,7 @@ label:hover {
   float: left;
   margin: 20px;
 
-  
+
 }
 #nav ul li a {
 	color: #141517;
