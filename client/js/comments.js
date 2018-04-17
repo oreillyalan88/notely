@@ -87,6 +87,18 @@ Template.comments.helpers({
         else return false
 
                        },
+    commentersImages:function(){
+
+        var commenter = this.author
+        console.log(commenter)
+
+        var userImage= UserImages.findOne({username:commenter}).image
+
+        console.log(userImage)
+
+        return userImage
+
+    },
 
 })
 
