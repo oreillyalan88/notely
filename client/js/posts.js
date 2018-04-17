@@ -10,7 +10,18 @@ Template.posts.rendered = function() {
 
 Template.posts.helpers({
 
+    postOwner:function(){
 
+        var postOwner =  this.userId
+        var thisUser = Meteor.userId()
+
+        console.log(postOwner,thisUser)
+        if (postOwner == thisUser){
+            return true
+        }
+        else return false
+
+    },
 })
 
 Template.posts.events({
@@ -70,6 +81,85 @@ Template.posts.events({
             Bert.alert("You Cannot Vote For Your Own Post", "danger", "growl-top-right")
             
         }
+    },
+
+    "click #deletePostButton": function (event, template) {
+        var postId = this._id
+
+        swal({
+                title: "Are you sure?",
+                // text: "You will not be able to recover this file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+
+                    console.log(postId)
+
+                    Meteor.call('removePost', postId, function (err) {
+                            if (err) {
+                                Bert.alert("Error Occurred", "danger", "growl-top-right")
+                            }
+
+                            else {
+                                Bert.alert("Post Removed", "success", "growl-top-right")
+                            }
+
+                        }
+                    )
+                }
+            });
+
+
+        return false;
+
+
+
+    },
+
+    "click #adminDeletePostButton": function (event, template) {
+        var postId = this._id
+
+        swal({
+                title: "Are you sure?",
+                // text: "You will not be able to recover this file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+
+                    console.log(postId)
+
+                    Meteor.call('removePost', postId, function (err) {
+                            if (err) {
+                                Bert.alert("Error Occurred", "danger", "growl-top-right")
+                            }
+
+                            else {
+                                Bert.alert("Post Removed", "success", "growl-top-right")
+                            }
+
+                        }
+                    )
+                }
+            });
+
+
+        return false;
+
+
     },
 
 

@@ -14,7 +14,7 @@
                         <div class="pull-left image">
 
                             <a href="/{{author}}/profile"><img src="{{profilePic}}" class="img-circle avatar" alt="user profile image" ></a>
-             
+
                         </div>
                         <div class="pull-left meta">
                             <div class="title h5">
@@ -27,6 +27,15 @@
             </div>
                     
             <p class="regular post-content">{{postInput}}</p>
+                {{#if postOwner}}
+                <button id="deletePostButton" data-toggle="tooltip" title="Delete Post" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                {{else}}
+                {{#if isInRole 'admin'}}
+                <button id="adminDeletePostButton" data-toggle="tooltip" title="Delete Post" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                {{/if}}
+                {{/if}}
 
                 {{#each upload in uploads}}
                 <li class="regular-uploads" style="list-style-type: none;"><a href="{{upload.file}}" name="postUpload" id="postUpload" target="_blank">{{upload.name}}</a>

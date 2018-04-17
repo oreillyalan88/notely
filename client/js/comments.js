@@ -32,42 +32,82 @@ Template.commentForm.events({
 })
 Template.comments.events({
     "click #deleteCommentButton": function (event, template) {
-        var userId = Meteor.userId()
-
+        var userId = Template.parentData(0).userId
+        console.log(userId)
         var commentId = this.commentId
+        swal({
+                title: "Are you sure?",
+                // text: "You will not be able to recover this file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-        Meteor.call('removeComment', userId, commentId, function (err) {
-                if (err) {
-                    Bert.alert("Error Occurred", "danger", "growl-top-right")
+
+
+                    Meteor.call('removeComment', userId, commentId, function (err) {
+                            if (err) {
+                                Bert.alert("Error Occurred", "danger", "growl-top-right")
+                            }
+
+                            else {
+                                Bert.alert("Comment Removed", "success", "growl-top-right")
+                            }
+
+                        }
+                    )
+
                 }
+            });
 
-                else {
-                    Bert.alert("Comment Removed", "success", "growl-top-right")
-                }
-
-            }
-        )
         return false;
 
 
     },
 
     "click #adminDeleteCommentButton": function (event, template) {
-        var userId = this.userId
+        var userId = Template.parentData(0).userId
 
         var commentId = this.commentId
 
-        Meteor.call('removeComment', userId, commentId, function (err) {
-                if (err) {
-                    Bert.alert("Error Occurred", "danger", "growl-top-right")
-                }
 
-                else {
-                    Bert.alert("Comment Removed", "success", "growl-top-right")
-                }
+        swal({
+                title: "Are you sure?",
+                // text: "You will not be able to recover this file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-            }
-        )
+
+
+                    Meteor.call('removeComment', userId, commentId, function (err) {
+                            if (err) {
+                                Bert.alert("Error Occurred", "danger", "growl-top-right")
+                            }
+
+                            else {
+                                Bert.alert("Comment Removed", "success", "growl-top-right")
+                            }
+
+                        }
+                    )
+
+                }
+            });
+
         return false;
 
 
@@ -78,10 +118,11 @@ Template.comments.events({
 Template.comments.helpers({
     postOwner:function(){
 
-        var postOwner =  this.userId
+        var postOwner =  Template.parentData(1).userId
+        var commentOwner = this.userId
         var thisUser = Meteor.userId()
-
-        if (postOwner == thisUser){
+        console.log(postOwner)
+        if (postOwner == thisUser || commentOwner==thisUser){
             return true
         }
         else return false
