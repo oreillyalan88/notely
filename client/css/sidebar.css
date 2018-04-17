@@ -145,6 +145,22 @@
 /* Making the sidebar responsive */
 @media (max-width: 900px) {
 
+
+  .card-style {
+    text-align: center;
+    display: block;
+    width: auto;
+    vertical-align: middle;
+    height: 100px;
+    /*max-width: 335px;*/
+    margin: 20px 0px;
+    box-shadow: 1px 1px 8px #999;
+    cursor: pointer;
+    border: 1px solid #ececec;
+    box-shadow: 0 0 5px #8c8c8c;
+    background-color: #fafaff;
+  }
+
   .main-content{
     max-width: none;
     padding: 40px 20px;
@@ -177,6 +193,36 @@
 
 /* Mobile phone layout */
 @media (max-width: 450px) {
+  #nav ul li a {
+    color: #141517;
+    text-transform: uppercase;
+    font-size: 8px;
+    font-weight: 700;
+    padding-left:6px;
+    padding-right:6px;
+
+  }
+
+  #nav ul li {
+    float: left;
+    margin: 5px;
+
+  }
+
+  .card-style {
+    text-align: center;
+    display: block;
+    width: auto;
+    vertical-align: middle;
+    height: 100px;
+    /*max-width: 335px;*/
+    margin: 20px 0px;
+    box-shadow: 1px 1px 8px #999;
+    cursor: pointer;
+    border: 1px solid #ececec;
+    box-shadow: 0 0 5px #8c8c8c;
+    background-color: #fafaff;
+  }
 
   .sidebar-left {
     padding: 20px 0;
@@ -189,7 +235,7 @@
 
   .sidebar-left .sidebar-links a {
     display: block;
-    max-width: 240px;
+    max-width: 335px;
     width: auto;
     vertical-align: middle;
     text-align: left;

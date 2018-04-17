@@ -1,19 +1,14 @@
 <template name="schools">
 
-		   
-		   
-		 <div class="row">
-    
+    <div id="heading-wrap">
+        <h3 class="blue">Select your Department</h3>
+    </div>
 
-                           
-                                <h2>Select the Department or School your course is enrolled under</h2>
-                       
-        
-            </div>
+
     	<br>
 	    {{#each departments}}
                 <div class="row">
-                <div class="col-md-4 col-sm-6">
+                    <div class="col-md-4 col-sm-9">
                     <div class="card-style">
                         <div class="media">
 
@@ -22,7 +17,7 @@
                             </div>
 
                             <div class="media-body">
-                                <h4 class="media-heading">{{name}}</h4>
+                                <h5 class="media-heading">{{name}}</h5>
                                 <div class="members pull-left"><small>1.235 Members</small></div><a href="/search/{{get_college}}/{{slugify(name)}}">
                                 	<div class="btn btn-sm btn-danger pull-right btn-part">View Courses</div></a>
                             </div>

@@ -1,19 +1,15 @@
 <template name="search">
-    
-    		   
-		   
-		 <div class="row">
-    
 
-                           
-                                <h2>Select Your College</h2>
-                       
-        
-            </div>
-    	<br>
+
+
+    <div id="heading-wrap">
+        <h3 class="blue"> Select Your College</h3>
+    </div>
+
+    <br>
 	    {{#each colleges}}
                 <div class="row">
-                <div class="col-md-4 col-sm-6">
+                    <div class="col-md-4 col-sm-9">
                 	
                     <div class="card-style">
                         <div class="media">
@@ -23,9 +19,9 @@
                             </div>
 
                             <div class="media-body">
-                                <h4>{{name}}</h4>
+                                <h5 class="media-heading">{{name}}</h5>
                                 <div class="members pull-left"><small>1.235 Members</small></div><a href="/search/{{slug}}/">
-                                	<div class="btn btn-sm btn-danger pull-right btn-part">View Departments</div></a>
+                                	<div class="btn btn-sm btn-danger pull-right btn-part">Departments</div></a>
                             </div>
                         </div>
                     </div>
