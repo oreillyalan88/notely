@@ -1,0 +1,40 @@
+
+
+.mt {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.overlay{
+
+
+
+}
+
+
+.top-landing {
+    border-top: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    color: #ececec;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 900;
+    box-shadow: 0 0 5px #8c8c8c;
+    background-color: #00A5DB;
+    padding: 1px 5px;
+    margin: 0px 20px 0px 0px;
+}
+
+
+.bottom-landing {
+    border-bottom: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    box-shadow: 0 0 5px #8c8c8c;
+    background-color: #fafaff;
+    padding: 1px 10px;
+    margin: 0px 20px 65px 0px;
+
+}
+
