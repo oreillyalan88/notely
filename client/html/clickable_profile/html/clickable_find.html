@@ -8,7 +8,7 @@
         </div>
 
         {{#EasySearch.IfInputEmpty index=index }}
-        <div class="padded examples black">For example "Yo Mamma"</div>
+        <div class="padded examples black">For example "John Doe"</div>
         {{else}}
         {{#if resultsCount}}
         <div class="padded count-results black">{{resultsCount}} results found.</div>
@@ -50,28 +50,28 @@
 
 <template name="User">
     <li class="user black {{selected}}" id="user-link">
-        <span class="name">{{jokeName}}</span>
+        <span class="name">{{username}}</span>
         {{#if selected}}
-        <div class="jokeInfo">
+        <div class="postInfo">
             <div>
-                <span class="posy blue">{{jokePost}}</span>
+                <a href="/{{username}}/profile"><span class="">Username: {{username}}</span></a>
             </div>
-            <br>
+        <br>
             <div>
-                <span class="author">Author: {{author}}</span>
+               <span class="">Email: {{emails.[0].address}}</span>
             </div>
-            <br>
-            <div>
-                <span class="vote-score red">Laugh Score: {{laughScore}}</span>
-            </div>
-            <br>
-            <div>
-                <span class="vote-score yellow">Frown Score: {{frownScore}}</span>
-            </div>
-            <br>
-            <div>
-                <span class="vote-score green">Puke Score: {{pukeScore}}</span>
-            </div>
+        <br>
+        <div>
+            <span class="">Up Votes: {{profile.upScore}}</span>
+        </div>
+        <br>
+        <div>
+            <span class="">Down Votes: {{profile.downScore}}</span>
+        </div>
+        <br>
+        <div>
+            <span class="">Uploads: {{uploads.uploadScore}}</span>
+        </div>
         </div>
         {{/if}}
     </li>
