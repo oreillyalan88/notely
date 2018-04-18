@@ -10,8 +10,11 @@
                 <textarea name="hide" value="{{moduleId}}" id="moduleId"  style="display:none;"></textarea>
                 <textarea name="postInput" id="postInput" class="form-control" maxlength="6000"
             placeholder="What's on your mind?"></textarea>
+
+
                 {{#if theCurrentUser}}
                 {{#each theTemps}}
+
                 <ul class="uploads" style="list-style-type: none;" >
                 <li><a href="{{file}}" name="postUpload" id="postUpload" >{{name}}</a> <button id="deleteFileButton" type="button" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -37,6 +40,7 @@
                 <li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li>
               </ul>
        </form>
+            <div class="home-map">{{> googleMap name="map" options=mapOptions}}</div>
 
        </div>
     <!--<table border="1">-->
