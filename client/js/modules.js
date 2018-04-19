@@ -18,7 +18,36 @@ Template.modules.helpers({
 
       return  slug
   },
-  
+
+
+    approved: function (_id) {
+
+        let currentUser =  Meteor.users.findOne({ _id: Meteor.userId() }).username
+
+        let isApproved = false;
+        let approved = Module.findOne({_id}).approved
+        var thisnew  = approved.filter(function(approved){ return approved.name === currentUser}).length;
+
+        if (thisnew==1){
+            isApproved = true;
+        }
+
+        return isApproved
+    },
+
+    rejected: function (_id) {
+        let currentUser =  Meteor.users.findOne({ _id: Meteor.userId() }).username
+
+        let isApproved = false;
+        let rejected = Module.findOne({_id}).rejected
+        var thisnew  = rejected.filter(function(rejected){ return rejected.name === currentUser}).length;
+
+        if (thisnew==1){
+            isApproved = true;
+        }
+
+        return isApproved
+    }
 
   
 })

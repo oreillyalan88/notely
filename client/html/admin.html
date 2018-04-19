@@ -30,4 +30,30 @@
             	<h1>There is currently no join requests</h1>
 {{/if}}
 
+<h1>Approved Users</h1>
+
+    {{#if thisAdminsUsers}}
+    {{ #each thisAdminsUser in thisAdminsUsers }}
+
+    <div class="row main-center">
+        <div id="heading-wrap">
+            <h5 class="black" id="modulename">{{thisAdminsUser.moduleName}}</h5>
+        </div>
+
+        <div class="col-md-9 col-sm-9">
+
+            {{#each approve in thisAdminsUser.approved}}
+            {{> Approved data=approve moduleName=thisAdminsUser.moduleName}}
+            {{else}}
+            <h4 >No Users to Administrate</h4>
+
+            {{/each}}
+        </div>
+    </div>
+
+    {{/each}}
+    {{else}}
+    <h1>There is currently no join requests</h1>
+    {{/if}}
+
 </template>

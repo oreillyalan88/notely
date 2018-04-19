@@ -19,7 +19,7 @@ Template.admin.rendered = function() {
 Template.admin.helpers({
 
     modules: function() {
-        modules = Module.find(
+        let modules = Module.find(
         {
             admin_id: Meteor.userId()
         },
@@ -38,37 +38,47 @@ Template.admin.helpers({
       return modules
         
     },
-    
-    userProfilePic: function(userName){
-    userProfilePic = UserImages.findOne(
-        {
-            username: userName
-        }
-        ).image
-        
-      return userProfilePic
-      console.log(userProfilePic)
-    },
+
+
+
+    thisAdminsUsers: function(){
+
+       let myAdminUsers = Module.find(
+                {
+                    admin_id: Meteor.userId()
+                },
+                {
+                    approved:{
+                        $exists: true,
+                        $not: {$size: 0}
+                    }
+                },
+                {
+                    sort: {moduleName:-1}
+
+                }
+            );
+
+            return myAdminUsers
+
+        },
+
     
      
 })
 
-Template.admin.events({
-    
-    // "click input[type=submit]": function(e, t) {
-    //     if ($(e.target).prop("id") == "approveScenarioButton") {
-    //         // Save the scenario
-    
-    //         // console.log(t.data);                   
-    //         // // console.log(t.data.name); 
+Template.Approved.helpers({
 
-    //             return false
-    //     } else if ($(e.target).prop("id") == "rejectScenarioButton") {
-    //         // Submit the scenario
-    //         console.log("you")
-            
-    //     }
+    userProfilePic: function(userName){
+        let userProfilePic = UserImages.findOne(
+            {
+                username: userName
+            }
+        ).image
 
-    // }
+        return userProfilePic
+        console.log(userProfilePic)
+
+    },
 
 })

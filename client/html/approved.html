@@ -1,0 +1,15 @@
+<template name="Approved">
+    <div class="card-style">
+        <div class="media">
+            <div class="media-left">
+                <img class="media-object img-thumbnail card-img" src="{{userProfilePic(data.name)}}">
+            </div>
+            <div class="media-body">
+                <h4 id="username">{{data.name}}</h4>
+                <!--<input type="submit" title="Reject" id="rejectScenarioButton"  value="Reject"/>-->
+                <!--<input type="submit" title="Approve" id="approveScenarioButton"  value="Approve"/>-->
+                <button class="btn btn-sm btn-danger pull-right btn-part" id="removeApprovalScenarioButton" >&nbsp;&nbsp;Remove&nbsp;&nbsp;</button>
+            </div>
+        </div>
+    </div>
+</template>
