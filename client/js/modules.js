@@ -61,7 +61,7 @@ Template.modules.events({
       var moduleLogo = event.target.moduleLogo.value;
       var currentCourseYear = event.target.currentCourseYear.value;
       var sluggedModuleName = slugify(modulename)
-
+      var userName = Meteor.users.findOne({ _id: Meteor.userId() }).username
       console.log(currentCourseYear,currentCourseId,modulename, moduleLogo)
       if(isNotEmpty(modulename) && isNotEmpty(moduleLogo))
        
@@ -73,16 +73,20 @@ Template.modules.events({
             
 
         if (error){
-              Bert.alert("That Module Already Exists For This Course!", "danger", "growl-top-right")   
-               
+              Bert.alert("That Module Already Exists For This Course!", "danger", "growl-top-right")
+
         } else {
              
                Bert.alert("Module Was Added Successfully!", "success", "growl-top-right")
                event.target.modulename.value ="";
+                Meteor.call("approveRequest", Meteor.userId(), modulename, userName)
+
         }
       }.bind(this));
-       
-  }
+
+
+
+      }
                         
          return false;
 

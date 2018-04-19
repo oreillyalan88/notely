@@ -1,0 +1,48 @@
+<template name="StagedFiles">
+
+
+    <div id="heading-wrap">
+        <h3 class="blue">Uploads Administration</h3>
+    </div>
+{{#if thisModulesFiles}}
+{{ #each ModulesFiles in thisModulesFiles }}
+
+<div class="row main-center">
+    <div id="heading-wrap">
+        <h5 class="black" id="modulename">{{ModulesFiles.moduleName}}</h5>
+    </div>
+
+    <div class="col-md-9 col-sm-9">
+
+        {{> Files _id=ModulesFiles._id}}
+
+
+    </div>
+</div>
+
+{{/each}}
+{{else}}
+<h1>There is currently no files uploaded</h1>
+{{/if}}
+</template>
+
+<template name="Files">
+
+    {{#each post in thisPostsFiles (_id)}}
+            {{#each upload in post.uploads}}
+                <table class="uploads" border="4">
+                    <tbody>
+                    <tr>
+                        <td class="upload-name">&nbsp;&nbsp;{{upload.name}}&nbsp;&nbsp;</td><td><a href="{{upload.file}}" target="_blank">&nbsp;&nbsp;Download&nbsp;&nbsp;</a></td><td><button id="deleteRealFileButton">delete</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            {{/each}}
+
+    {{else}}
+    <h4>There is currently no files uploaded to this group</h4>
+
+    {{/each}}
+
+</template>

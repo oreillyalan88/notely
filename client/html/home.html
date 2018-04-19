@@ -1,67 +1,43 @@
 <template name="posts">
     
     {{> postForm}}
-    
-    {{#each posts}}
-
-    <!--  Posts -->
-    <div class="post">
-        <div class="row">
-            <div class="border-end">
-            <div class =".col-sm-6 .col-md-5 .col-lg-6" id="info">
-
-                    <div class="post-heading">
-                        <div class="pull-left image">
-
-                            <a href="/{{author}}/profile"><img src="{{profilePic}}" class="img-circle avatar" alt="user profile image" ></a>
-
-                        </div>
-                        <div class="pull-left meta">
-                            <div class="title h5">
-                                <a href="#"><b>{{author}}</b></a>
-                                made a post.
-                            </div>
-                            <h6 class="text-muted time" >{{livestamp createdAt}}</h6>
-                        </div>
-                    </div> 
-            </div>
-                    
-            <p class="regular post-content">{{postInput}}</p>
-                {{#if postOwner}}
-                <button id="deletePostButton" data-toggle="tooltip" title="Delete Post" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                {{else}}
-                {{#if isInRole 'admin'}}
-                <button id="adminDeletePostButton" data-toggle="tooltip" title="Delete Post" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                {{/if}}
-                {{/if}}
-
-                {{#each upload in uploads}}
-                <li class="regular-uploads" style="list-style-type: none;"><a href="{{upload.file}}" name="postUpload" id="postUpload" target="_blank">{{upload.name}}</a>
-                </li>
-                {{/each}}
-
-            <div class =".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-offset-0" id="vote">
-                <img src="/up.png" class="rank" id="upvote">
-                <img src="/down.png" class="rank" id="downvote">
-            </div>
-            <div class="row" id="score">
-                <h3 class="count white block">{{upScore}}</h3>
-                <h3 class="count white block">{{downScore}}</h3>
-            </div>
-            </div>
-
-                    {{> comments}}    
-                    {{> commentForm}}
-        </div>
-
+    <div id="nav">
+    <a href-="" id="trigger" style="cursor: pointer; text-decoration:none;"><h4>Sort</h4></a>
     </div>
+    <div id="nav">
 
-    {{else}}
-    <h1>Nothing Posted Yet</h1>
+        <ul class="nav nav-pills" style="display: none">
+            <li data-template="createdAt" role="presentation" class="active"> <a  href="#" >Newest<span class="sr-only">(current)</span></a> </li>
+            <li data-template="mostLiked" role="presentation"> <a  href="#">Most Liked</a> </li>
+            <!--<li data-template="StagedFiles" role="presentation"> <a  href="#">Manage Uploads</a> </li>-->
+            <li data-template="mostAttachments" role="presentation"> <a  href="#">Most Attachments</a> </li>
 
-    {{/each}}
+        </ul>
+    </div>
+    <br><br>
+    {{> Template.dynamic template=tab }}
+
+<script>
+
+    $(document).ready( function(){
+
+        $('#trigger').click( function(event){
+
+            event.stopPropagation();
+
+            $('.nav-pills').toggle();
+
+        });
+        //
+        // $('#trigger').click( function(){
+        //
+        //     $('.nav-pills').hide();
+        //
+        // });
+
+    });
 
 
+</script>
 </template>
+

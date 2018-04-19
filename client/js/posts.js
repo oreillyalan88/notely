@@ -1,3 +1,7 @@
+Template.posts.onCreated( function() {
+    this.currentTab = new ReactiveVar( "createdAt" );
+});
+
 Template.posts.rendered = function() {
     
     $("#posts-link").addClass('selected')
@@ -9,6 +13,11 @@ Template.posts.rendered = function() {
 }
 
 Template.posts.helpers({
+
+
+    tab: function() {
+        return Template.instance().currentTab.get();
+    },
 
     postOwner:function(){
 
@@ -161,6 +170,14 @@ Template.posts.events({
 
 
     },
+    'click .nav-pills li': function( event, template ) {
+        var currentTab = $( event.target ).closest( "li" );
+
+        currentTab.addClass( "active" );
+        $( ".nav-pills li" ).not( currentTab ).removeClass( "active" );
+
+        template.currentTab.set( currentTab.data( "template" ) );
+    }
 
 
 
