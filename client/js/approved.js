@@ -34,7 +34,24 @@ Template.Approved.events({
         Meteor.call("deleteApproval", adminId, moduleName, userName)
         Meteor.call("rejectRequest", adminId, moduleId, userName)
 
-        Bert.alert("User: "+userName+" has been granted access to "+moduleName, "success", "growl-top-right");
+        Bert.alert("User: "+userName+" has been banned from "+moduleName, "success", "growl-top-right");
+
+        return false;
+    },
+
+    'click #removeFromScenarioButton': function() {
+
+        var adminId = Meteor.userId()
+        var userName = this.data.name;
+        var moduleName = this.moduleName;
+        var moduleId = Module.findOne({moduleName:moduleName,admin_id:adminId})._id
+
+        var userId = Meteor.users.findOne({username:userName})._id
+
+        console.log(userName,adminId,moduleName,moduleId)
+        Meteor.call("deleteApproval", adminId, moduleName, userName)
+
+        Bert.alert("User: "+userName+" has been removed from "+moduleName, "success", "growl-top-right");
 
         return false;
     },
