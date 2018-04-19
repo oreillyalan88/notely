@@ -16,9 +16,8 @@ Template.Request.helpers({
       return userProfilePic
     
     },
-    
-    
 })
+
 
 Template.Request.events({
   'click #approveScenarioButton': function() {
@@ -61,3 +60,28 @@ Template.Request.events({
    
   }
 });
+
+Template.Request_staging.helpers({
+    modules: function() {
+        let modules = Module.find(
+            {
+                admin_id: Meteor.userId()
+            },
+            {
+                requested:{
+                    $exists: true,
+                    $not: {$size: 0}
+                }
+            },
+            {
+                sort: {moduleName:-1}
+
+            }
+        );
+
+        return modules
+
+    },
+
+
+})

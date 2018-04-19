@@ -1,3 +1,7 @@
+Template.admin.onCreated( function() {
+    this.currentTab = new ReactiveVar( "Request_staging" );
+});
+
 Template.admin.rendered = function() {
 
 
@@ -18,67 +22,24 @@ Template.admin.rendered = function() {
 
 Template.admin.helpers({
 
-    modules: function() {
-        let modules = Module.find(
-        {
-            admin_id: Meteor.userId()
-        },
-        {
-            requested:{
-                $exists: true, 
-                $not: {$size: 0} 
-            }
-        },
-        {
-            sort: {moduleName:-1}
-            
-        }
-        );
-        
-      return modules
-        
+    tab: function() {
+        return Template.instance().currentTab.get();
     },
-
-
-
-    thisAdminsUsers: function(){
-
-       let myAdminUsers = Module.find(
-                {
-                    admin_id: Meteor.userId()
-                },
-                {
-                    approved:{
-                        $exists: true,
-                        $not: {$size: 0}
-                    }
-                },
-                {
-                    sort: {moduleName:-1}
-
-                }
-            );
-
-            return myAdminUsers
-
-        },
 
     
      
 })
 
-Template.Approved.helpers({
+Template.admin.events({
 
-    userProfilePic: function(userName){
-        let userProfilePic = UserImages.findOne(
-            {
-                username: userName
-            }
-        ).image
+    'click .nav-pills li': function( event, template ) {
+        var currentTab = $( event.target ).closest( "li" );
 
-        return userProfilePic
-        console.log(userProfilePic)
+        currentTab.addClass( "active" );
+        $( ".nav-pills li" ).not( currentTab ).removeClass( "active" );
 
-    },
+        template.currentTab.set( currentTab.data( "template" ) );
+    }
+
 
 })

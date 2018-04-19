@@ -1,3 +1,36 @@
+<template name="Approved_staging">
+
+
+    <div id="heading-wrap">
+        <h3 class="blue">Group Administration</h3>
+    </div>
+
+    {{#if thisAdminsUsers}}
+    {{ #each thisAdminsUser in thisAdminsUsers }}
+
+    <div class="row main-center">
+        <div id="heading-wrap">
+            <h5 class="black" id="modulename">{{thisAdminsUser.moduleName}}</h5>
+        </div>
+
+        <div class="col-md-9 col-sm-9">
+
+            {{#each approve in thisAdminsUser.approved}}
+            {{> Approved data=approve moduleName=thisAdminsUser.moduleName}}
+            {{else}}
+            <h4 >No Users to Administrate</h4>
+
+            {{/each}}
+        </div>
+    </div>
+
+    {{/each}}
+    {{else}}
+    <h1>There is currently no join requests</h1>
+    {{/if}}
+</template>
+
+
 <template name="Approved">
     <div class="card-style">
         <div class="media">
@@ -6,8 +39,7 @@
             </div>
             <div class="media-body">
                 <h4 id="username">{{data.name}}</h4>
-                <!--<input type="submit" title="Reject" id="rejectScenarioButton"  value="Reject"/>-->
-                <!--<input type="submit" title="Approve" id="approveScenarioButton"  value="Approve"/>-->
+
                 <button class="btn btn-sm btn-danger pull-right btn-part" id="removeApprovalScenarioButton" >&nbsp;&nbsp;Ban&nbsp;&nbsp;</button>
                 <button class="btn btn-sm btn-warning pull-right btn-part" id="removeFromScenarioButton" >&nbsp;&nbsp;Remove&nbsp;&nbsp;</button>
             </div>

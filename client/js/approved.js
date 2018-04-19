@@ -16,9 +16,9 @@ Template.Approved.helpers({
         return userProfilePic
 
     },
-
-
 })
+
+
 
 Template.Approved.events({
     'click #removeApprovalScenarioButton': function() {
@@ -57,3 +57,29 @@ Template.Approved.events({
     },
 
 });
+
+Template.Approved_staging.helpers({
+    thisAdminsUsers: function(){
+
+        let myAdminUsers = Module.find(
+            {
+                admin_id: Meteor.userId()
+            },
+            {
+                approved:{
+                    $exists: true,
+                    $not: {$size: 0}
+                }
+            },
+            {
+                sort: {moduleName:-1}
+
+            }
+        );
+
+        return myAdminUsers
+
+    },
+
+
+})
