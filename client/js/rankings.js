@@ -39,9 +39,9 @@ Template.rankings.helpers({
 
     topSharer: function (){
 
-        var shareLeader = Meteor.users.findOne({},{sort: {'uploads.uploadScore': -1}}); //user with must uploads
+        var shareLeader = Meteor.users.findOne({},{sort: {'uploadScore': -1}}); //user with must uploads
 
-        if(shareLeader.uploads.uploadScore==0)
+        if(shareLeader.uploads==0)
         {
             return false
             console.log('didntwork')
@@ -54,7 +54,7 @@ Template.rankings.helpers({
     },
 
     topSharerProfilePic: function (){
-        var shareLeader = Meteor.users.findOne({},{sort: {'uploads.uploadScore': -1}}); //user with must uploads
+        var shareLeader = Meteor.users.findOne({},{sort: {'uploadScore': -1}}); //user with must uploads
 
         var profilePic = UserImages.findOne({userId:shareLeader._id}).image
         console.log(profilePic)
