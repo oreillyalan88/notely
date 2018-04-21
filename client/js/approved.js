@@ -31,8 +31,8 @@ Template.Approved.events({
         var userId = Meteor.users.findOne({username:userName})._id
 
         console.log(userName,adminId,moduleName,moduleId)
+        Meteor.call("rejectRequest", adminId, moduleName, userName)
         Meteor.call("deleteApproval", adminId, moduleName, userName)
-        Meteor.call("rejectRequest", adminId, moduleId, userName)
 
         Bert.alert("User: "+userName+" has been banned from "+moduleName, "success", "growl-top-right");
 

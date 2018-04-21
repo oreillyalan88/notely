@@ -32,8 +32,7 @@ Template.Request.events({
 
           Meteor.call("approveRequest", adminId, moduleName, userName)
           Meteor.call("deleteRequest", adminId, moduleName, userName)
-          Meteor.call("addRoles", userId,moduleId)
-    
+
           Bert.alert("User: "+userName+" has been granted access to "+moduleName, "success", "growl-top-right");
    
     return false;
@@ -49,9 +48,9 @@ Template.Request.events({
        var reject_id = Module.findOne({moduleName:moduleName,admin_id:adminId}).reject_id
     
           Meteor.call("rejectRequest", adminId, moduleName, userName)
-          Meteor.call("deleteApproved", adminId, moduleName, userName)
-          Meteor.call("addRoles", userId,reject_id)
-          Meteor.call("")
+          Meteor.call("deleteRequest", adminId, moduleName, userName)
+
+
 
 
         Bert.alert("User: "+userName+" has been denied access to "+moduleName, "danger", "growl-top-right");
