@@ -6,40 +6,17 @@ Template.StagedFiles.helpers({
                 admin_id: Meteor.userId()
             },
             {
-                uploads:{
-                    $exists: true,
-                    $not: {$size: 0}
-                }
-            },
-            {
                 sort: {moduleName:-1}
 
             },
 
         )
 
-        // var _ids = thisModulesFiles.map(a => a._id);
-        // // console.log(_ids)
-        // // console.log(thisModulesFiles)
-        //
-        // let thisPostsFiles = Posts.find(
-        //     {
-        //         moduleId:{ $in : _ids }
-        //     },
-        //     {
-        //         uploads:{
-        //             $exists: true,
-        //             $not: {$size: 0}
-        //         }
-        //     }
-        // ).fetch()
 
-
-        // var posts
-        // console.log(thisPostsFiles)
 
         return thisModulesFiles
     },
+
 
 
 })
@@ -69,5 +46,43 @@ Template.Files.helpers({
         return thisPostsFiles
     },
 
+
+
+
+
+})
+
+Template.Files.events({
+
+
+    'submit .uploadedfiles ': function ( event, template) {
+        event.preventDefault();
+        let id=  event.target.uploadId.value;
+
+
+        swal({
+                title: "Are you sure?",
+                text: "All accossiated posts, comments and files will be deleted and made unrecoverable",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+
+                    FileCollection.remove({_id: id});
+                    Meteor.call('deletePostByUpload',id)
+                    swal("Deleted!", "Your file has been deleted.", "success");
+                } else {
+                    swal("Cancelled", "Your file is safe", "error");
+                }
+            });
+
+        return false;
+    },
 
 })

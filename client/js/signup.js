@@ -23,6 +23,7 @@ Template.signup.events({
           username: username,
           email: email,
           password: password,
+          uploadScore :0,
           profile:{
               upScore:0,
               downScore:0,

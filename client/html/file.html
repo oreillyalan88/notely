@@ -20,7 +20,7 @@
     </div>
 </div>
 
-{{/each}}
+    {{/each}}
 {{else}}
 <h1>There is currently no files uploaded</h1>
 {{/if}}
@@ -29,20 +29,24 @@
 <template name="Files">
 
     {{#each post in thisPostsFiles (_id)}}
+
             {{#each upload in post.uploads}}
-                <table class="uploads" border="4">
+                <table style="width:100%" class="uploads" border="2">
                     <tbody>
-                    <tr>
-                        <td class="upload-name">&nbsp;&nbsp;{{upload.name}}&nbsp;&nbsp;</td><td><a href="{{upload.file}}" target="_blank">&nbsp;&nbsp;Download&nbsp;&nbsp;</a></td><td><button id="deleteRealFileButton">delete</button></td>
+                    <tr><form class="uploadedfiles">
+                        <textarea name="hide" value="{{upload.upload_id}}" id="uploadId"  style="display:none;"></textarea>
+                        <td class="upload-name">&nbsp;&nbsp;{{upload.name}}&nbsp;&nbsp;</td><td><a href="{{upload.file}}" target="_blank" colspan="3" >&nbsp;&nbsp;Download&nbsp;&nbsp;</a></td><td><button type="submit">Delete</button></td>
+                    </form>
                     </tr>
                     </tbody>
                 </table>
-
-            {{/each}}
-
-    {{else}}
-    <h4>There is currently no files uploaded to this group</h4>
+                {{else}}
 
     {{/each}}
+
+    {{else}}
+
+    {{/each}}
+
 
 </template>

@@ -123,7 +123,7 @@ Template.modules.events({
             }
             FileCollection.insert(yourFile, function (err, result ){
                 console.log("callback for the insert, err: ", err);
-                var fileLocation = 'http://localhost:3000/cfs/files/FileCollection/'+result._id
+                var fileLocation = 'https://notelly.herokuapp.com/cfs/files/FileCollection/'+result._id
 
                 if (!err) {
                     console.log("inserted without error");

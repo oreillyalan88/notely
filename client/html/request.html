@@ -36,10 +36,10 @@
   <div class="card-style">
     <div class="media">
         <div class="media-left">
-            <img class="media-object img-thumbnail card-img" src="{{userProfilePic(data.name)}}">
+           <a href="/{{data.name}}/profile"><img class="media-object img-thumbnail card-img" src="{{userProfilePic(data.name)}}"></a>
             </div>
       <div class="media-body">
-        <h4 id="username">{{data.name}}</h4>
+          <a href="/{{data.name}}/profile"><h4 id="username">{{data.name}}</h4></a>
 
         <button class="btn btn-sm btn-danger pull-right btn-part" id="rejectScenarioButton" >&nbsp;&nbsp;Reject&nbsp;&nbsp;</button>
         <button class="btn btn-sm btn-success pull-right btn-part" id="approveScenarioButton" >Approve</button>

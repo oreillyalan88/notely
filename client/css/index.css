@@ -5,11 +5,24 @@
     margin-bottom: 20px;
 }
 
-.overlay{
+@media (max-width: 768px) {
+.overlay #img{
+    width :390px;
+
+}}
+
+@media (max-width: 500px) {
+    .overlay #img{
+        width :280px;
+
+    }}
 
 
+@media (max-width: 400px) {
+    .overlay #img{
+        width :220px;
 
-}
+    }}
 
 
 .top-landing {

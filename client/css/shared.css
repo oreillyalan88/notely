@@ -1,1 +1,14 @@
-.uploads{}
+@media (max-width: 400px) {
+    .uploads{
+
+
+        font-size: 7px;
+        font-weight: 700;
+    }
+.regular-uploads{
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+}
