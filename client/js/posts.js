@@ -33,6 +33,59 @@ Template.posts.helpers({
     },
 })
 
+Template.createdAt.helpers({
+
+
+    postOwner:function(){
+
+        var postOwner =  this.userId
+        var thisUser = Meteor.userId()
+
+        console.log(postOwner,thisUser)
+        if (postOwner == thisUser){
+            return true
+        }
+        else return false
+
+    },
+})
+
+Template.mostAttachments.helpers({
+
+
+    postOwner:function(){
+
+        var postOwner =  this.userId
+        var thisUser = Meteor.userId()
+
+        console.log(postOwner,thisUser)
+        if (postOwner == thisUser){
+            return true
+        }
+        else return false
+
+    },
+})
+
+
+Template.mostLiked.helpers({
+
+
+    postOwner:function(){
+
+        var postOwner =  this.userId
+        var thisUser = Meteor.userId()
+
+        console.log(postOwner,thisUser)
+        if (postOwner == thisUser){
+            return true
+        }
+        else return false
+
+    },
+})
+
+
 Template.posts.events({
     
     "click #upvote": function(){
