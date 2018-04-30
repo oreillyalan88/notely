@@ -224,6 +224,28 @@
     background-color: #fafaff;
   }
 
+  .card-style #removeApprovalScenarioButton {
+    font-size: 5px;
+    font-weight: 700;
+  }
+
+  .card-style #removeFromScenarioButton {
+    font-size: 5px;
+    font-weight: 700;
+  }
+
+
+  .card-style #rejectScenarioButton {
+    font-size: 5px;
+    font-weight: 700;
+  }
+
+  .card-style #approveScenarioButton {
+    font-size: 5px;
+    font-weight: 700;
+  }
+
+
   .sidebar-left {
     padding: 20px 0;
   }
