@@ -58,6 +58,8 @@ Template.Files.events({
     'submit .uploadedfiles ': function ( event, template) {
         event.preventDefault();
         let id=  event.target.uploadId.value;
+        var postid = event.target.postid.value;
+        console.log(id,postid)
 
 
         swal({
@@ -75,7 +77,7 @@ Template.Files.events({
                 if (isConfirm) {
 
                     FileCollection.remove({_id: id});
-                    Meteor.call('deletePostByUpload',id)
+                    Meteor.call('deletePostByUpload',id, postid)
                     swal("Deleted!", "Your file has been deleted.", "success");
                 } else {
                     swal("Cancelled", "Your file is safe", "error");

@@ -35,6 +35,8 @@
                     <tbody>
                     <tr><form class="uploadedfiles">
                         <textarea name="hide" value="{{upload.upload_id}}" id="uploadId"  style="display:none;"></textarea>
+                        <textarea name="hide" value="{{post._id}}" id="postid"  style="display:none;"></textarea>
+
                         <td class="upload-name">&nbsp;&nbsp;{{upload.name}}&nbsp;&nbsp;</td><td><a href="{{upload.file}}" target="_blank" colspan="3" >&nbsp;&nbsp;Download&nbsp;&nbsp;</a></td><td><button type="submit">Delete</button></td>
                     </form>
                     </tr>

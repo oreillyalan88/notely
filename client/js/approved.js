@@ -61,7 +61,7 @@ Template.Approved.events({
 Template.Approved_staging.helpers({
     thisAdminsUsers: function(){
 
-        let myAdminUsers = Module.find(
+        var myAdminUsers = Module.find(
             {
                 admin_id: Meteor.userId()
             },
@@ -75,10 +75,13 @@ Template.Approved_staging.helpers({
                 sort: {moduleName:-1}
 
             }
-        );
+        ).fetch();
 
-        return myAdminUsers
 
+        // // var res = myAdminUsers.filter(x => x.approved.name == 'IAmTheAdmin');
+        // var result = _.reject(myAdminUsers, ['approved.name', 'IAmTheAdmin']);
+        // console.log(result)
+         return myAdminUsers
     },
 
 
