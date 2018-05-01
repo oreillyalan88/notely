@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="75cb1db0-d37e-4d34-9ac3-33691cf77e5f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/html/file.html" afterPath="$PROJECT_DIR$/client/html/file.html" />
+      <change beforePath="$PROJECT_DIR$/client/html/approved.html" afterPath="$PROJECT_DIR$/client/html/approved.html" />
       <change beforePath="$PROJECT_DIR$/client/js/approved.js" afterPath="$PROJECT_DIR$/client/js/approved.js" />
-      <change beforePath="$PROJECT_DIR$/client/js/file.js" afterPath="$PROJECT_DIR$/client/js/file.js" />
-      <change beforePath="$PROJECT_DIR$/lib/methods/methods.js" afterPath="$PROJECT_DIR$/lib/methods/methods.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,16 +64,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mostLiked.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/mostLiked.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sidebar.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/sidebar.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -96,31 +84,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="approved.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="approved.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/html/approved.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="43" column="103" lean-forward="false" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="103" />
+            <state relative-caret-position="544">
+              <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="approved.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="approved.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/approved.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
-              <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <caret line="95" column="6" lean-forward="false" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="request.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/request.html">
+      <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="44" column="92" lean-forward="false" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="92" />
+            <state relative-caret-position="-142">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/html/sidebar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -220,7 +218,6 @@
         <option value="$PROJECT_DIR$/client/html/mostAttachments.html" />
         <option value="$PROJECT_DIR$/client/html/createdAt.html" />
         <option value="$PROJECT_DIR$/client/html/request.html" />
-        <option value="$PROJECT_DIR$/client/html/approved.html" />
         <option value="$PROJECT_DIR$/client/html/clickable_profile/html/clickable_shared.html" />
         <option value="$PROJECT_DIR$/client/js/signup.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -243,6 +240,7 @@
         <option value="$PROJECT_DIR$/client/js/file.js" />
         <option value="$PROJECT_DIR$/lib/methods/methods.js" />
         <option value="$PROJECT_DIR$/client/js/approved.js" />
+        <option value="$PROJECT_DIR$/client/html/approved.html" />
       </list>
     </option>
   </component>
@@ -584,12 +582,12 @@
       <workItem from="1524583298114" duration="755000" />
       <workItem from="1524666883583" duration="17185000" />
       <workItem from="1525001393269" duration="4845000" />
-      <workItem from="1525121457565" duration="4847000" />
+      <workItem from="1525121457565" duration="6134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="434361000" />
+    <option name="totallyTimeSpent" value="435648000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,13 +680,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/html/clickable_profile/css/clickable_connections.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="81" lean-forward="false" selection-start-line="0" selection-start-column="81" selection-end-line="0" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/shared.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -886,13 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="63" lean-forward="false" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -990,26 +974,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/html/request.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="44" column="92" lean-forward="false" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1034,14 +1002,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/methods/methods.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="195" column="21" lean-forward="false" selection-start-line="195" selection-start-column="21" selection-end-line="195" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/html/mostAttachments.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1050,10 +1010,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/approved.html">
+    <entry file="file://$PROJECT_DIR$/client/css/sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="43" column="103" lean-forward="false" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="103" />
+        <state relative-caret-position="606">
+          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/methods/methods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="195" column="21" lean-forward="false" selection-start-line="195" selection-start-column="21" selection-end-line="195" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1061,7 +1045,23 @@
     <entry file="file://$PROJECT_DIR$/client/js/approved.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <caret line="95" column="6" lean-forward="false" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/approved.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
           <folding />
         </state>
       </provider>

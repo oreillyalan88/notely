@@ -86,3 +86,12 @@ Template.Approved_staging.helpers({
 
 
 })
+Template.Approved.helpers({
+    isAdmin:function (name) {
+
+        if (name == 'IAmTheAdmin'){
+            return true
+        }
+        else return false
+    },
+})
